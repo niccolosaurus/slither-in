@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS slitherin_db;
+CREATE DATABASE slitherin_db;
