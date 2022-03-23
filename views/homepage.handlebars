@@ -1,0 +1,14 @@
+{{#each animal}}
+<div class="contianer">
+    <div id="img-container">
+        <img align="left" src="{{animal.image}}" alt="{{animal.image_description}}">
+    </div>
+    <h1>{{animal.name}}</h1>
+    <ul>
+        <li>Type:{{animal.species}}</li>
+        <li>Species:{{animal.species}}</li>
+        <li>Morph:{{animal.pattern}}</li>
+    </ul>
+   <p id="contact">Contact Owner:{{user.email}}</p>
+</div>
+{{/each}}
