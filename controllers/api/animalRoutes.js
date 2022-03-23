@@ -25,7 +25,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     });
 
     if (!newAnimal) {
-      res.status(404).json({ message: 'No blog found with this ID!' });
+      res.status(404).json({ message: 'No animal found with this ID!' });
       return;
     }
 

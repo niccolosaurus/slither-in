@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Sally",
+        "type": "Snake",
+        "species": "Ball Python",
+        "pattern": "Spotted",
+        "description": "Yellow with orange spots",
+        "gravid": true,
+        "forSale": true,
+        "deceased": false,
+        "date_created": "01/01/2022",
+        "user_id": 1
+    },
+    {
+        "name": "Lizzy",
+        "type": "Lizard",
+        "species": "Bearded Dragon",
+        "pattern": "Striped",
+        "description": "Very cuddly lizard",
+        "gravid": false,
+        "forSale": true,
+        "deceased": false,
+        "date_created": "01/15/2022",
+        "user_id": 2
+    }
+]
