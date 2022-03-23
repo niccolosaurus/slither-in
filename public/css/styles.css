@@ -23,3 +23,12 @@
 #gravid {
     visibility: hidden;
 }
+
+#displaySignup:hover {
+    cursor: pointer;
+    color: lightblue;
+}
+
+#signup {
+    visibility: hidden;
+}
