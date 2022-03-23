@@ -1,0 +1,25 @@
+.card {
+   background-color: silver; 
+   margin: 5em;
+}
+
+#firstRow {
+    display: inline;
+}
+
+#secondRow {
+    display: inline;
+}
+
+#sidepanel {
+    width: 20%;
+    right: 0;
+}
+
+#maleHidden {
+    visibility: hidden;
+}
+
+#gravid {
+    visibility: hidden;
+}
