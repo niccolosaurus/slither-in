@@ -18,6 +18,14 @@ Reptile.init(
     type: {
         type: DataType.STRING,
         allowNull: false,
+    }, 
+    age: {
+        type: DataType.INTEGER,
+        allowNull: false,
+    },
+    sex: {
+        type: DataType.STRING,
+        allowNull: false,
     },
     species: {
         type: DataType.STRING,
