@@ -1,11 +1,12 @@
-<form action="">
+<form action="/target">
     <section id="firstRow">
-        <img src="pics/SlitherIn.png" alt="placeholder">
-        <div class ="card">
+        <form action="/pics" class="dropzone" id ="dropzone"></form>
+        <pre id ="output"></pre>
+        <div class ="formCard">
             <p>Name or ID:</p>
             <input type="text" id="name">
         </div>
-        <div class="card">
+        <div class="formCard">
             <p>Type:</p>
             <select name = "type" id = "type">
                 <option value="snake">Snake</option>
@@ -14,20 +15,20 @@
                 <option value="misc">Misc</option>
             </select>
         </div>
-        <div class="card">
+        <div class="formCard">
             <p>Species:</p>
             <select name="species" id="species">
                 {{!-- species populated by javascript dynamically --}}
             </select>
         </div>
-        <div class="card">
+        <div class="formCard">
             <p>Sex</p>
             <select name = "sex" id = "sex">
                 <option value="male">Male</option>
                 <option value="female">Female</option>
             </select>
         </div>
-        <div class="card">
+        <div class="formCard">
             <p>Age:</p>
             <select name="age" id="age">
                 <option value="underYear">Less Than One Year</option>
@@ -45,43 +46,44 @@
         </div>
     </section>
     <section id="secondRow">
-        <div class="card">
+        <div class="formCard">
             <p>Pattern/Morph:</p>
             <input type="text" id="pattern">
         </div>
-        <div class="card">
+        <div class="formCard">
             <p>Description/Notes:</p>
             <input type="text" id="description">
         </div>
-        <div class="card" id="maleHidden">
+        <div class="formCard" id="maleHidden">
             <p>Gravid</p>
             <input type="checkbox" id="gravid" name="gravid">
             <p id ="gravidChecked">Expect eggs in 28 to 48 days</p>
         </div>
-        <div class="card">
+        <div class="formCard">
             <p>For Sale</p>
             <input type="checkbox" id="forSale" name="forSale">
         </div>
-        <div class="card" id="maleHidden">
+        <div class="formCard" id="maleHidden">
             <p>Deceased</p>
             <input type="checkbox" id="deceased" name="deceased">
         </div>
-        <div class="card">
+        <div class="formCard">
             <p>Breeding History</p>
             <input type="text" id="breeding">
         </div>
     </section>
 
     <div id="sidepanel">
-        <div class="card">
+        <div class="formCard">
             <p>Male Parent</p>
             <button id="maleAdd">Add Parent</button>
         </div>
-        <div class="card">
+        <div class="formCard">
             <p>Male Parent</p>
             <button id="femaleAdd">Add Parent</button>
         </div>
     </div>
+    <button id = "submitForm">Add Animal</button>
 </form>
 
 <script src="/js/animal.js"></script>

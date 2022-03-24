@@ -1,14 +1,17 @@
-.card {
+.formCard {
    background-color: silver; 
    margin: 5em;
+
 }
 
 #firstRow {
     display: inline;
+    max-height: 30%;
 }
 
 #secondRow {
     display: inline;
+    max-height: 30%;
 }
 
 #sidepanel {
