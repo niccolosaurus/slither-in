@@ -16,15 +16,15 @@ Animal.init(
       allowNull: false,
     },
     type: {
-        type: DataType.STRING,
+        type: DataTypes.STRING,
         allowNull: false,
     },
     species: {
-        type: DataType.STRING,
+        type: DataTypes.STRING,
         allowNull: false,
     },
     pattern: {
-        type: DataType.STRING,
+        type: DataTypes.STRING,
         allowNull: false,
     },
     description: {
