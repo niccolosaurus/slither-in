@@ -8,4 +8,4 @@ Animal.belongsTo(User, {
     foreignKey: 'user_id'
 })
 
-module.exports(User, Animal)
+module.exports = { User, Animal };
