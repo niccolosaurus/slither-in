@@ -25,6 +25,16 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/animal', async (req, res) => {
+    try {
+        res.render('animal', {
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        res.status(500).json(err)
+    }
+});
+
 
 
 router.get('/animal/:id', async (req, res) => {
@@ -33,7 +43,7 @@ router.get('/animal/:id', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['name'],
+                    attributes: ['username'],
                 },
             ],
         });
