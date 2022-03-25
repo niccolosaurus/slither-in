@@ -1,0 +1,58 @@
+[
+    {
+        "name": "Ball Python",
+        "animal_type": "Snake"
+    },
+    {
+        "name": "Boa Constrictor",
+        "animal_type": "Snake"
+    },
+    {
+        "name": "Kingsnake",
+        "animal_type": "Snake"
+    },
+    {
+        "name": "Hognose Snake",
+        "animal_type": "Snake"
+    },
+    {
+        "name": "Reticulated Python",
+        "animal_type": "Snake"
+    },
+    {
+        "name": "Leopard Gecko",
+        "animal_type": "Lizard"
+    },
+    {
+        "name": "Bearded Dragon",
+        "animal_type": "Lizard"
+    },
+    {
+        "name": "Skink",
+        "animal_type": "Lizard"
+    },
+    {
+        "name": "Crested Gecko",
+        "animal_type": "Lizard"
+    },
+    {
+        "name": "Tokay Gecko",
+        "animal_type": "Lizard"
+    },
+    {
+        "name": "Spurred Tortoise",
+        "animal_type": "Tortoise"
+    },
+    {
+        "name": "Leopard Tortoise",
+        "animal_type": "Tortoise"
+    },
+    {
+        "name": "Greek Tortoise",
+        "animal_type": "Tortoise"
+    },
+    {
+        "name": "Red-Footed Tortoise",
+        "animal_type": "Tortoise"
+    }
+]

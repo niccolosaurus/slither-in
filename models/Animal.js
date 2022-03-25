@@ -15,20 +15,20 @@ Animal.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    type_name: {
-        type: DataTypes.STRING,
+    type_id: {
+        type: DataTypes.INTEGER,
         allowNull: false,
         references: {
           model: 'type',
-          key: 'name',
+          key: 'id',
         },
     },
-    species_name: {
-        type: DataTypes.STRING,
+    species_id: {
+        type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-          model: 'Species',
-          key:'name',
+          model: 'species',
+          key:'id',
         },
     },
     pattern: {
