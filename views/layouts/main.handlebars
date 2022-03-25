@@ -5,36 +5,80 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Slither-In Home</title>
-  <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="/public/css/styles.css">
   <!--Bulma CSS framework link-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"> </link>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  </link>
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-         <img src="pics/SlitherIn.png" alt="placeholder" align="left">
-        <a href="/">Slither-In</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <button class="no-button" id="logout">logout</button>
-        <button id="create" href="/form">Create Animal</button>
-         <input id="search-bar" type="text" placeholder="Search..">
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
-    </header>
+  <section class="hero is-primary is-small">
+  <!-- Hero head: will stick at the top -->
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item">
+            <img class="is-128x256" src="/pics/SiltherIn.png" alt="Logo">
+          </a>
+           <span class="navbar-burger" data-target="navbarMenuHeroA">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span> 
+        </div>
+        <div id="navbarMenuHeroA" class="navbar-menu">
+          <div class="navbar-end">
+            {{#if logged_in}}
+            <a class="navbar-item is-active" href="/">
+              Home
+            </a>
+            <a class="navbar-item is-active">
+              logout
+            </a>
+            <a class="navbar-item is-active" href="/animal">
+              Create Animal
+            </a>
+            {{else}}
+            <a class="navbar-item is-active" href="/login">login</a>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+   <div class="hero-body">
+    <div class="container has-text-centered">
+      <p class="title is-1">
+        Slither-In
+      </p>
+      <p class="subtitle">
+        Welcome
+      </p>
+    </div>
+  </div>
+  </section>
+  
+  <!-- Conditionally render login or logout links -->
+  <!-- {{#if logged_in}}
+  <button class="navbar-item button" id="logout">logout</button>
+  <button class="navbar-item button" id="create" href="/form">Create Animal</button>
+  <input class="navbar-item button" id="search-bar" type="text" placeholder="Search..">
+  {{else}}
+
+  <a class="navbar-end" href="/login">login</a>
+  {{/if}}
+ 
+
+  </div> -->
+  <div>
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
     <footer>
-      
+
     </footer>
   </div>
 
