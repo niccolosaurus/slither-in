@@ -28,8 +28,3 @@ const newAnimalHandler = async (event) => {
         }
     }
 }
-const maleParent = document.querySelector('maleParent')
-const femaleParent = document.querySelector('femaleParent')
-document
-    .querySelector('.new-project-form')
-    .addEventListener('submit', newFormHandler);
