@@ -1,8 +1,8 @@
 [
     {
         "name": "Sally",
-        "type": "Snake",
-        "species": "Ball Python",
+        "type_id": 1,
+        "species_id": 1,
         "pattern": "Spotted",
         "description": "Yellow with orange spots",
         "gravid": true,
@@ -13,8 +13,8 @@
     },
     {
         "name": "Lizzy",
-        "type": "Lizard",
-        "species": "Bearded Dragon",
+        "type_id": 2,
+        "species_id": 7,
         "pattern": "Striped",
         "description": "Very cuddly lizard",
         "gravid": false,

@@ -11,17 +11,13 @@ Animal.belongsTo(User, {
     foreignKey: 'user_id'
 })
 Species.hasMany(Animal, {
-    foreignKey: 'species_name'
+    foreignKey: 'species_id'
 })
 Type.hasMany(Species, {
-    foreignKey: 'animal_type'
+    foreignKey: 'type_id'
 })
-Type.hasMany(Animal, {
-    foreignKey: 'animal_type'
-})
-Species.hasMany(Animal, {
-    foreignKey: 'animal_species'
-})
+
+
 
 
 module.exports = { User, Animal, Type, Species };

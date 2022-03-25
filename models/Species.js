@@ -15,11 +15,11 @@ Species.init(
         type: DataTypes.STRING,
         allowNull: false,
       },  
-      animal_type: {
+      type_id: {
         type: DataTypes.INTEGER,
         references: {
           model: 'type',
-          key: 'name',
+          key: 'id',
         },
       },
     },
