@@ -1,14 +1,27 @@
 {{#each animal}}
-<div class="contianer">
-    <div id="img-container">
-        <img align="left" src="{{animal.image}}" alt="{{animal.image_description}}">
+<div class="card">
+  
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <figure class="image is-48x48">
+          <img src="{{animal.image}}" alt="{{animal.image_description}}">
+        </figure>
+      </div>
+      <div class="media-content">
+        <p class="title is-4">{{animal.name}}</p>
+        <p class="subtitle is-6">Contact Owner:{{animal.user.email}}</p>
+      </div>
     </div>
-    <h1>{{animal.name}}</h1>
-    <ul>
-        <li>Type:{{animal.species}}</li>
-        <li>Species:{{animal.species}}</li>
-        <li>Morph:{{animal.pattern}}</li>
-    </ul>
-   <p id="contact">Contact Owner:{{user.email}}</p>
+    <div class="content">
+      <p>Type:{{animal.type}}</p>
+      <p>Species:{{animal.species}}</p>
+      <p>Morph:{{animal.morph}}</p>
+    </div>
+  <footer class="card-footer">
+    <a href="#" class="card-footer-item">Save</a>
+    <a href="#" class="card-footer-item">Edit</a>
+    <a href="#" class="card-footer-item">Delete</a>
+  </footer>
 </div>
 {{/each}}
