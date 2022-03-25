@@ -35,3 +35,9 @@
 #signup {
     visibility: hidden;
 }
+
+.dropzone {
+    border: 4px solid blueviolet;
+    color: blueviolet;
+    margin: 2rem 0;
+  }
