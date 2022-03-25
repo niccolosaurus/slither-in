@@ -15,13 +15,21 @@ Animal.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    type: {
+    type_name: {
         type: DataTypes.STRING,
         allowNull: false,
+        references: {
+          model: 'type',
+          key: 'name',
+        },
     },
-    species: {
+    species_name: {
         type: DataTypes.STRING,
         allowNull: false,
+        references: {
+          model: 'Species',
+          key:'name',
+        },
     },
     pattern: {
         type: DataTypes.STRING,
