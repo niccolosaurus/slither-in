@@ -4,7 +4,7 @@ const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
   try {
-    const newAnimal = await Blog.create({
+    const newAnimal = await Animal.create({
       ...req.body,
       user_id: req.session.user_id,
     });
