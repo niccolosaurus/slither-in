@@ -15,13 +15,21 @@ Animal.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    age: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     type_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'type',
-          key: 'id',
-        },
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'type',
+        key: 'id',
+      },
     },
     species_id: {
         type: DataTypes.INTEGER,
