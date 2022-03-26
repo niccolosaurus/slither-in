@@ -41,3 +41,7 @@
     color: blueviolet;
     margin: 2rem 0;
   }
+
+.float-right {
+    float: right;
+}
