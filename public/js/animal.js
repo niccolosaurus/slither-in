@@ -1,6 +1,6 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+// import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
 
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
+// import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
 
 const newAnimalHandler = async (event) => {
     event.preventDefault();
@@ -65,6 +65,7 @@ const app = initializeApp(firebaseConfig);
 
 const analytics = getAnalytics(app);
 
+//Dropzone
 const myDropzone = new window.Dropzone("#my-form");
 
 const output = document.querySelector("#output");
@@ -73,3 +74,4 @@ myDropzone.on("addedfile", (file) => {
     // Add an info line about the added file for each file.
     output.innerHTML += `<div>File added: ${file.name}</div>`;
 });
+
