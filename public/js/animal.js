@@ -77,6 +77,24 @@ myDropzone.on("addedfile", (file) => {
     output.innerHTML += `<div>File added: ${file.name}</div>`;
 });
 
-// var storageRef = firebase.storage().ref();
-// var animalRef = storageRef.child();
-// var animalImageRef = storageRef.child('images')
+const maleBtn = document.getElementById("maleHidden");
+const dropdown = document.getElementById('sex');
+dropdown.onchange = function () {
+    let targetValue = document.getElementById('sex').value;
+    if (targetValue === "male") {
+        maleBtn.style.display = "none";
+    } else {
+        maleBtn.style.display = "block";
+    }
+};
+
+function onClick() {
+    var checkBox = document.getElementById("gravid");
+    var displayMessage = document.getElementById("gravid-message");
+    if (checkBox.checked == true) {
+        displayMessage.style.display = "block";
+    } else {
+        displayMessage.style.display = "none";
+    }
+}
+
