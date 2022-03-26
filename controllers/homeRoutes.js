@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { format } = require('path');
-const { Animal, User } = require('../models')
+const { Animal, User, Type, Species } = require('../models')
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
