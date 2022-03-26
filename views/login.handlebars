@@ -1,25 +1,34 @@
-<div class="row">
-  <div class="col-md-6">
-    <h2>Login</h2>
-
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">email:</label>
-        <input class="form-input" type="text" id="email-login" />
-      </div>
-      <div class="form-group">
-        <label for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
-      <div>
+<div class="card my-5 mx-5 mt-5">
+<header class="card-header">
+    <p class="card-header-title">
+    Login
+    </p>
+</header>
+<div class="card-content">
+    <div class="content">
+    <div class="field py-2">
+        <label class="label">Email</label>
+        <div class="control">
+            <input class="input" type="text" placeholder="Text input" id="email-input">
+        </div>
+    </div>
+    <div class="field">
+        <label class="label">Password</label>
+        <div class="control">
+            <input class="input" type="password" placeholder="Text input" id="password-input">
+        </div>
+    </div>
+    <div class="field is-grouped">
+        <div class="control">
+            <button class="button is-link" id="login-button">Login!</button>
+        </div>
+    </div>
+    <div>
         <a class="column is-4" href="/signup">Sign up instead</a>
-      </div>
-    </form>
-  </div>
-
+    </div>
+    </div>
 </div>
+</div>
+
 
 <script src="./js/login.js"></script>
