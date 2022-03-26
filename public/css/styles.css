@@ -19,12 +19,12 @@
     right: 0;
 }
 
-#maleHidden {
+/* #maleHidden {
     visibility: hidden;
-}
+} */
 
-#gravid {
-    visibility: hidden;
+#gravid-message {
+    display: none;
 }
 
 #displaySignup:hover {
