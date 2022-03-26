@@ -21,9 +21,8 @@ Animal.init(
     },
     image: {
       type: DataTypes.STRING,
-      allowNull: true,
+      defaultValue: '/pics/SlitherIn.png',
     },
-
     pattern: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -45,16 +44,10 @@ Animal.init(
         defaultValue: false,
     },
     species: {
-      type: DataTypes.TEXT,
-      defaultValue: JSON.stringify({
-        "Lizard": [ "Bearded Dragon", "Leopard Gecko", "Skink", "Crested Gecko"],
-        "Snake": [ "Ball Python", "Boa Constrictor","Kingsnake", "Hognose Snake", "Reticulated Python"],
-        "Turtle": ["Spurred Tortoise", "Leopard Tortoise", "Greek Tortoise", "Red-Footed Tortoise"]
-      })
+      type: DataTypes.STRING,
     },
     type: {
       type: DataTypes.STRING,
-      defaultValue: JSON.stringify({ "Lizard" : "Bearded Dragon"}, {"Lizard" : "Leopard Gecko"}, {"Lizard" : "Skink"}, {"Lizard" : "Created Gecko"}, {"Snake" : "Ball Python"},{"Snake" : "Boa Constrictor"}, {"Snake" : "Kingsnake"}, {"Snake" : "Hognose Snake"}, {"Snake" : "Reticulated Python"}, {"Turtle" : "Spurred Tortoise"}, {"Turtle" : "Leopard Tortoise"}, {"Turtle" : "Greek Tortoise"},{"Turtle" : "Red-Footed Tortoise"})
     },
     date_created: {
       type: DataTypes.DATE,

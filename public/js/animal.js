@@ -21,7 +21,7 @@ const newAnimalHandler = async (event) => {
     })
 
     if (response.ok) {
-        document.location.replace('/profile');
+        document.location.replace('/');
     } else {
         const errors = await response.json();
         alert('Failed to create a new animal due to backend error: ' + JSON.stringify(errors, undefined, 4));
