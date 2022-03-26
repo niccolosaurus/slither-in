@@ -19,12 +19,12 @@
     right: 0;
 }
 
-#maleHidden {
+/* #maleHidden {
     visibility: hidden;
-}
+} */
 
-#gravid {
-    visibility: hidden;
+#gravid-message {
+    display: none;
 }
 
 #displaySignup:hover {
@@ -41,3 +41,15 @@
     color: blueviolet;
     margin: 2rem 0;
   }
+
+.float-right {
+    float: right;
+}
+
+.container {
+    max-width: 400px;
+}
+
+.container .dropzone {
+    border: 2px dashed grey;
+}

@@ -1,45 +1,97 @@
+let currentImage = null;
+
 const newAnimalHandler = async (event) => {
     event.preventDefault();
-    const name = document.querySelector('#name').value.trim();
-    const type = document.querySelector('type').value.trim();
-    const species = document.querySelector('species').value.trim();
-    const sex = document.querySelector("sex")
-    const age = docuemnt.querySelector('age')
-    const pattern = document.querySelector('pattern')
-    const description = document.querySelector('description').value.trim
-    const gravid = document.querySelector('gravid')
-    const forSale = document.querySelector('forSale')
-    const deceased = document.querySelector('deceased')
-    const breeding = document.querySelector('breeding')
+    
+    const form = document.getElementById('animal-form');
+    const formData = new FormData(form);
+    
+    let formValue = {};
+    formData.forEach((value, key) => formValue[key] = value);
 
-    if (name && type && species && sex && age && pattern && description && gravid && forSale && deceased && breeding) {
-        const response = await fetch('/api/animals', {
-            method: 'POST',
-            body: JSON.stringify({ name, type, species, sex, age, pattern, description, gravid, forSale, deceased, breeding }),
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        })
+    const response = await fetch('/api/animals', {
+        method: 'POST',
+        body: JSON.stringify({ 
+            ...formValue,
+            image: currentImage,
+        }),
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
 
-        if (response.ok) {
-            document.location.replace('/profile');
-        } else {
-            alert('Failed to create project');
-        }
+    if (response.ok) {
+        document.location.replace('/profile');
+    } else {
+        const errors = await response.json();
+        alert('Failed to create a new animal due to backend error: ' + JSON.stringify(errors, undefined, 4));
     }
 }
 
-// Dropzone
-import Dropzone from "dropzone";
-// Optionally, import the dropzone file to get default styling.
-import "dropzone/dist/dropzone.css";
-import "./style.css";
+// Event listener for the login button.
+const loginBtn = document.getElementById('animal-form');
+loginBtn.addEventListener('submit', newAnimalHandler);
 
-const myDropzone = new Dropzone("#my-form");
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-const output = document.querySelector("#output");
+const firebaseConfig = {
+    apiKey: "AIzaSyCGNeNTDF1spTcG0qonviP3S3NwyYDr1gg",
+    authDomain: "slither-in-184c6.firebaseapp.com",
+    projectId: "slither-in-184c6",
+    storageBucket: "slither-in-184c6.appspot.com",
+    messagingSenderId: "131632929877",
+    appId: "1:131632929877:web:bf27a94cbd40ce2862c8dc",
+    measurementId: "G-6W779P6JK8"
+};
 
-myDropzone.on("addedfile", (file) => {
-  // Add an info line about the added file for each file.
-  output.innerHTML += `<div>File added: ${file.name}</div>`;
-});
+function configureDropzone() {
+    const myDropzone = new window.Dropzone("#my-form", {
+        accept: (file, done) => {
+            const app = firebase.initializeApp(firebaseConfig);
+ 
+            const output = document.querySelector("#output");
+            output.innerHTML += `<div>File added: ${file.name}</div>`;
+
+            const uuid = window.crypto.randomUUID();
+            const storageRef = firebase.storage().ref();
+            const imageRef = storageRef.child(`${uuid}.png`);
+
+            imageRef.put(file).then((snapshot) => {
+                const fullpath = `https://firebasestorage.googleapis.com/v0/b/slither-in-184c6.appspot.com/o/${uuid}.png?alt=media`
+                output.innerHTML += `<div>File added: ${fullpath}</div>`;
+                currentImage = fullpath;
+                console.log('Uploaded a blob or file!');
+                done();
+            }).catch(() => {
+                alert('Failed to upload to backend');
+            });
+        }
+    });
+    myDropzone.autodiscover = false;
+}
+
+// Bootstrap Dropzone
+configureDropzone();
+
+const maleBtn = document.getElementById("maleHidden");
+const dropdown = document.getElementById('sex');
+dropdown.onchange = function () {
+    let targetValue = document.getElementById('sex').value;
+    if (targetValue === "male") {
+        maleBtn.style.display = "none";
+    } else {
+        maleBtn.style.display = "block";
+    }
+};
+
+function onClick() {
+    var checkBox = document.getElementById("gravid");
+    var displayMessage = document.getElementById("gravid-message");
+    if (checkBox.checked == true) {
+        displayMessage.style.display = "block";
+    } else {
+        displayMessage.style.display = "none";
+    }
+}
+

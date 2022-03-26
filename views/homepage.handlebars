@@ -12,10 +12,11 @@
           </div>
           <div class="card-content">
             <p class="title is-size-3">{{animal.name}}
-            </p>
-            <p class="">Type: {{animaltype.name}}</p>
-            <p>Species: {{animal.species_id}}</p>
-            <p>Morph: {{animal.pattern}}</p>
+            </p> 
+            <p class="is-right float-right">Date Added: {{format_date animal.date_created}}</p>
+            <p class="">Type:{{animal.type_id.name}}</p>
+            <p>Species:{{animal.species_id.name}}</p>
+            <p>Morph:{{animal.pattern}}</p>
           </div>
           {{#if logged_in}}
             {{!-- {{#if animal == animals.user_id}} --}}
