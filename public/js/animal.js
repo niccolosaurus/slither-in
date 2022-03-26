@@ -6,7 +6,7 @@ const newAnimalHandler = async (event) => {
     event.preventDefault();
     const name = document.querySelector('#name').value.trim();
     const type = document.querySelector('type').value.trim();
-    const species = document.querySelector('species').value.trim();
+    const species = document.getElementById('species').value;
     const sex = document.querySelector("sex")
     const age = docuemnt.querySelector('age')
     const pattern = document.querySelector('pattern')
@@ -17,6 +17,8 @@ const newAnimalHandler = async (event) => {
     const breeding = document.querySelector('breeding')
 
     if (name && type && species && sex && age && pattern && description && gravid && forSale && deceased && breeding) {
+
+        console.log(species);
         const response = await fetch('/api/animals', {
             method: 'POST',
             body: JSON.stringify({ name, type, species, sex, age, pattern, description, gravid, forSale, deceased, breeding }),
@@ -26,7 +28,7 @@ const newAnimalHandler = async (event) => {
         })
 
         if (response.ok) {
-            document.location.replace('/profile');
+            // document.location.replace('/profile');
         } else {
             alert('Failed to create project');
         }
@@ -42,29 +44,30 @@ const newAnimalHandler = async (event) => {
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
-const firebaseConfig = {
+// const firebaseConfig = {
 
-    apiKey: "AIzaSyCGNeNTDF1spTcG0qonviP3S3NwyYDr1gg",
+//     apiKey: "AIzaSyCGNeNTDF1spTcG0qonviP3S3NwyYDr1gg",
 
-    authDomain: "slither-in-184c6.firebaseapp.com",
+//     authDomain: "slither-in-184c6.firebaseapp.com",
 
-    projectId: "slither-in-184c6",
+//     projectId: "slither-in-184c6",
 
-    storageBucket: "slither-in-184c6.appspot.com",
+//     storageBucket: "slither-in-184c6.appspot.com",
 
-    messagingSenderId: "131632929877",
+//     messagingSenderId: "131632929877",
 
-    appId: "1:131632929877:web:bf27a94cbd40ce2862c8dc",
+//     appId: "1:131632929877:web:bf27a94cbd40ce2862c8dc",
 
-    measurementId: "G-6W779P6JK8"
+//     measurementId: "G-6W779P6JK8"
 
-};
-// Initialize Firebase
+// };
+// // Initialize Firebase
 
 // const app = initializeApp(firebaseConfig);
 
 // const analytics = getAnalytics(app);
 
+//Dropzone
 const myDropzone = new window.Dropzone("#my-form");
 
 const output = document.querySelector("#output");
@@ -85,20 +88,6 @@ dropdown.onchange = function () {
     }
 };
 
-// function checkCheckbox() {
-//     let yes = document.getElementById("gravid");
-//     let no = document.getElementById("not-gravid");
-//     if (yes.checked == true) {
-//         let y = document.getElementById("gravid").value;
-//         return document.getElementById("yes").innerHTML = y;
-//     } else if (no.checked == true) {
-//         let n = document.getElementById("not-gravid").value;
-//         return document.getElementById("no").innerHTML = n;
-//     } else {
-//         return document.getElementById("error").innerHTML = "Please Mark a Box"
-//     }
-// }
-
 function onClick() {
     var checkBox = document.getElementById("gravid");
     var displayMessage = document.getElementById("gravid-message");
@@ -108,3 +97,4 @@ function onClick() {
         displayMessage.style.display = "none";
     }
 }
+

@@ -45,3 +45,11 @@
 .float-right {
     float: right;
 }
+
+.container {
+    max-width: 400px;
+}
+
+.container .dropzone {
+    border: 2px dashed grey;
+}
