@@ -2,6 +2,7 @@
     {
         "name": "Sally",
         "type_id": 1,
+        "age": "1 year",
         "species_id": 1,
         "pattern": "Spotted",
         "description": "Yellow with orange spots",
@@ -14,6 +15,7 @@
     {
         "name": "Lizzy",
         "type_id": 2,
+        "age": "3 Years",
         "species_id": 7,
         "pattern": "Striped",
         "description": "Very cuddly lizard",
