@@ -1,81 +1,78 @@
-// import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
-
-// import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
+let currentImage = null;
 
 const newAnimalHandler = async (event) => {
     event.preventDefault();
-    const name = document.querySelector('#name').value.trim();
-    const type = document.querySelector('type').value.trim();
-    const species = document.getElementById('species').value;
-    const sex = document.querySelector("sex")
-    const age = docuemnt.querySelector('age')
-    const pattern = document.querySelector('pattern')
-    const description = document.querySelector('description').value.trim
-    const gravid = document.querySelector('gravid')
-    const forSale = document.querySelector('forSale')
-    const deceased = document.querySelector('deceased')
-    const breeding = document.querySelector('breeding')
+    
+    const form = document.getElementById('animal-form');
+    const formData = new FormData(form);
+    
+    let formValue = {};
+    formData.forEach((value, key) => formValue[key] = value);
 
-    if (name && type && species && sex && age && pattern && description && gravid && forSale && deceased && breeding) {
+    const response = await fetch('/api/animals', {
+        method: 'POST',
+        body: JSON.stringify({ 
+            ...formValue,
+            image: currentImage,
+        }),
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
 
-        console.log(species);
-        const response = await fetch('/api/animals', {
-            method: 'POST',
-            body: JSON.stringify({ name, type, species, sex, age, pattern, description, gravid, forSale, deceased, breeding }),
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        })
-
-        if (response.ok) {
-            // document.location.replace('/profile');
-        } else {
-            alert('Failed to create project');
-        }
+    if (response.ok) {
+        document.location.replace('/profile');
+    } else {
+        const errors = await response.json();
+        alert('Failed to create a new animal due to backend error: ' + JSON.stringify(errors, undefined, 4));
     }
 }
 
-// TODO: Add SDKs for Firebase products that you want to use
+// Event listener for the login button.
+const loginBtn = document.getElementById('animal-form');
+loginBtn.addEventListener('submit', newAnimalHandler);
 
+// TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
+const firebaseConfig = {
+    apiKey: "AIzaSyCGNeNTDF1spTcG0qonviP3S3NwyYDr1gg",
+    authDomain: "slither-in-184c6.firebaseapp.com",
+    projectId: "slither-in-184c6",
+    storageBucket: "slither-in-184c6.appspot.com",
+    messagingSenderId: "131632929877",
+    appId: "1:131632929877:web:bf27a94cbd40ce2862c8dc",
+    measurementId: "G-6W779P6JK8"
+};
 
-// Your web app's Firebase configuration
+function configureDropzone() {
+    const myDropzone = new window.Dropzone("#my-form", {
+        accept: (file, done) => {
+            const app = firebase.initializeApp(firebaseConfig);
+ 
+            const output = document.querySelector("#output");
+            output.innerHTML += `<div>File added: ${file.name}</div>`;
 
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const uuid = window.crypto.randomUUID();
+            const storageRef = firebase.storage().ref();
+            const imageRef = storageRef.child(`${uuid}.png`);
 
-// const firebaseConfig = {
+            imageRef.put(file).then((snapshot) => {
+                const fullpath = `https://firebasestorage.googleapis.com/v0/b/slither-in-184c6.appspot.com/o/${uuid}.png?alt=media`
+                output.innerHTML += `<div>File added: ${fullpath}</div>`;
+                currentImage = fullpath;
+                console.log('Uploaded a blob or file!');
+                done();
+            }).catch(() => {
+                alert('Failed to upload to backend');
+            });
+        }
+    });
+    myDropzone.autodiscover = false;
+}
 
-//     apiKey: "AIzaSyCGNeNTDF1spTcG0qonviP3S3NwyYDr1gg",
-
-//     authDomain: "slither-in-184c6.firebaseapp.com",
-
-//     projectId: "slither-in-184c6",
-
-//     storageBucket: "slither-in-184c6.appspot.com",
-
-//     messagingSenderId: "131632929877",
-
-//     appId: "1:131632929877:web:bf27a94cbd40ce2862c8dc",
-
-//     measurementId: "G-6W779P6JK8"
-
-// };
-// // Initialize Firebase
-
-// const app = initializeApp(firebaseConfig);
-
-// const analytics = getAnalytics(app);
-
-//Dropzone
-const myDropzone = new window.Dropzone("#my-form");
-
-const output = document.querySelector("#output");
-
-myDropzone.on("addedfile", (file) => {
-    // Add an info line about the added file for each file.
-    output.innerHTML += `<div>File added: ${file.name}</div>`;
-});
+// Bootstrap Dropzone
+configureDropzone();
 
 const maleBtn = document.getElementById("maleHidden");
 const dropdown = document.getElementById('sex');
