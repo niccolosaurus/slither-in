@@ -1,6 +1,6 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+// import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
 
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
+// import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
 
 const newAnimalHandler = async (event) => {
     event.preventDefault();
@@ -61,9 +61,9 @@ const firebaseConfig = {
 };
 // Initialize Firebase
 
-const app = initializeApp(firebaseConfig);
+// const app = initializeApp(firebaseConfig);
 
-const analytics = getAnalytics(app);
+// const analytics = getAnalytics(app);
 
 const myDropzone = new window.Dropzone("#my-form");
 
@@ -73,3 +73,38 @@ myDropzone.on("addedfile", (file) => {
     // Add an info line about the added file for each file.
     output.innerHTML += `<div>File added: ${file.name}</div>`;
 });
+
+const maleBtn = document.getElementById("maleHidden");
+const dropdown = document.getElementById('sex');
+dropdown.onchange = function () {
+    let targetValue = document.getElementById('sex').value;
+    if (targetValue === "male") {
+        maleBtn.style.display = "none";
+    } else {
+        maleBtn.style.display = "block";
+    }
+};
+
+// function checkCheckbox() {
+//     let yes = document.getElementById("gravid");
+//     let no = document.getElementById("not-gravid");
+//     if (yes.checked == true) {
+//         let y = document.getElementById("gravid").value;
+//         return document.getElementById("yes").innerHTML = y;
+//     } else if (no.checked == true) {
+//         let n = document.getElementById("not-gravid").value;
+//         return document.getElementById("no").innerHTML = n;
+//     } else {
+//         return document.getElementById("error").innerHTML = "Please Mark a Box"
+//     }
+// }
+
+function onClick() {
+    var checkBox = document.getElementById("gravid");
+    var displayMessage = document.getElementById("gravid-message");
+    if (checkBox.checked == true) {
+        displayMessage.style.display = "block";
+    } else {
+        displayMessage.style.display = "none";
+    }
+}
