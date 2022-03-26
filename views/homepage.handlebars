@@ -17,6 +17,7 @@
             <p>Species:{{animal.species_id}}</p>
             <p>Morph:{{animal.pattern}}</p>
           </div>
+          {{#if logged_in}}
           <footer class="card-footer">
             <p class="card-footer-item">
               <a id="edit" href="/edit" class="has-text-grey">
@@ -34,6 +35,7 @@
               </a>
             </p>
           </footer>
+          {{/if}}
         </div>
       </div>
       {{/each}}
