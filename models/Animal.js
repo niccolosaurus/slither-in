@@ -21,9 +21,8 @@ Animal.init(
     },
     image: {
       type: DataTypes.STRING,
-      allowNull: true,
+      defaultValue: '/pics/SlitherIn.png',
     },
-
     pattern: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -46,12 +45,12 @@ Animal.init(
     },
     species: {
       type: DataTypes.STRING,
+
       allowNull: false
     },
     type: {
       type: DataTypes.STRING,
       allowNull: false
-
     },
     date_created: {
       type: DataTypes.DATE,

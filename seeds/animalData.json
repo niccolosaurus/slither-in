@@ -1,9 +1,11 @@
 [
     {
         "name": "Sally",
-        "type": "Snake",
         "age": "1 year",
-        "species": "Ball Python",
+        "image": "/pics/SlitherIn.png",
+        "type":"Snake",
+        "species": "Hognose Snake",
+
         "pattern": "Spotted",
         "description": "Yellow with orange spots",
         "gravid": true,
@@ -14,9 +16,10 @@
     },
     {
         "name": "Lizzy",
-        "type": "lizard",
+        "type": "Lizard",
         "age": "3 Years",
-        "species": "Bearded Dragon",
+        "image": "/pics/SlitherIn.png",
+        "species": "Breaded Dragon",
         "pattern": "Striped",
         "description": "Very cuddly lizard",
         "gravid": false,
