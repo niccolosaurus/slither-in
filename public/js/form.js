@@ -1,11 +1,11 @@
-const { options } = require("../../models/User");
-
 //Populate species dropdown
 var speciesSelect = document.getElementById("species");
 var typeChoice = document.getElementById("animalType");
 options = ["Ball Python", "Boa Constrictor", "Kingsnake", "Hognose Snake", "Reticulated Python"];
 
 typeChoice.onchange = function() {
+
+    console.log("working");
 
     speciesSelect.innerHTML = "";
 
@@ -17,6 +17,7 @@ typeChoice.onchange = function() {
         options = ["Spurred Tortoise", "Leopard Tortoise", "Greek Tortoise", "Red-Footed Tortoise"]
     }
     var specChoices
+    console.log(options);
     for (var option of options) {
         specChoices += "<option>" + option + "</option>"
     }

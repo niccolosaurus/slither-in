@@ -2,7 +2,7 @@
     <section id="firstRow">
         <div class="container">
             <div action="/file-upload" class="dropzone" id="my-form">
-               <input type="file" name="myFile">
+               <input type="file" name="myFile" id="myFile">
             </div>
 
             <pre id ="output"></pre>
@@ -13,7 +13,7 @@
         </div>
         <div class="formCard">
             <p>Type:</p>
-            <select name="type_id" id="animalType">
+            <select name="type" id="animalType">
                 <option value="1">Snake</option>
                 <option value="2">Lizard</option>
                 <option value="3">Tortoise</option>
@@ -21,7 +21,7 @@
         </div>
         <div class="formCard">
             <p>Species:</p>
-            <select name="species_id" id="species">
+            <select name="species" id="species">
                 {{!-- species populated by javascript dynamically --}}
             </select>
         </div>
