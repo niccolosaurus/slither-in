@@ -1,18 +1,17 @@
-<form action="/target">
+<form action="/api/animals" method="post">
     <section id="firstRow">
-        <form action="/pics" class="dropzone" id ="my-form"></form>
+        <div action="/pics" class="dropzone" id="my-form"></div>
         <pre id ="output"></pre>
         <div class ="formCard">
             <p>Name or ID:</p>
-            <input type="text" id="name">
+            <input type="text" name ="name" id="name">
         </div>
         <div class="formCard">
             <p>Type:</p>
-            <select name = "type" id = "type">
-                <option value="snake">Snake</option>
-                <option value="lizard">Lizard</option>
-                <option value="tortoise">Tortoise</option>
-                <option value="misc">Misc</option>
+            <select name="type_id" id="type">
+                <option value="1">Snake</option>
+                <option value="2">Lizard</option>
+                <option value="3">Tortoise</option>
             </select>
         </div>
         <div class="formCard">
@@ -48,11 +47,11 @@
     <section id="secondRow">
         <div class="formCard">
             <p>Pattern/Morph:</p>
-            <input type="text" id="pattern">
+            <input type="text" name ="morph" id="pattern">
         </div>
         <div class="formCard">
             <p>Description/Notes:</p>
-            <input type="text" id="description">
+            <input type="text" name="description" id="description">
         </div>
         <div class="formCard" id="maleHidden">
             <p>Gravid</p>
@@ -69,7 +68,7 @@
         </div>
         <div class="formCard">
             <p>Breeding History</p>
-            <input type="text" id="breeding">
+            <input type="text" name="breeding" id="breeding">
         </div>
     </section>
 
@@ -85,5 +84,6 @@
     </div>
     <button id = "submitForm">Add Animal</button>
 </form>
-
+<script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 <script src="/js/animal.js"></script>

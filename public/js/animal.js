@@ -1,3 +1,7 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
+
 const newAnimalHandler = async (event) => {
     event.preventDefault();
     const name = document.querySelector('#name').value.trim();
@@ -29,17 +33,43 @@ const newAnimalHandler = async (event) => {
     }
 }
 
-// Dropzone
-import Dropzone from "dropzone";
-// Optionally, import the dropzone file to get default styling.
-import "dropzone/dist/dropzone.css";
-import "./style.css";
+// TODO: Add SDKs for Firebase products that you want to use
 
-const myDropzone = new Dropzone("#my-form");
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+
+// Your web app's Firebase configuration
+
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+const firebaseConfig = {
+
+    apiKey: "AIzaSyCGNeNTDF1spTcG0qonviP3S3NwyYDr1gg",
+
+    authDomain: "slither-in-184c6.firebaseapp.com",
+
+    projectId: "slither-in-184c6",
+
+    storageBucket: "slither-in-184c6.appspot.com",
+
+    messagingSenderId: "131632929877",
+
+    appId: "1:131632929877:web:bf27a94cbd40ce2862c8dc",
+
+    measurementId: "G-6W779P6JK8"
+
+};
+// Initialize Firebase
+
+const app = initializeApp(firebaseConfig);
+
+const analytics = getAnalytics(app);
+
+const myDropzone = new window.Dropzone("#my-form");
 
 const output = document.querySelector("#output");
 
 myDropzone.on("addedfile", (file) => {
-  // Add an info line about the added file for each file.
-  output.innerHTML += `<div>File added: ${file.name}</div>`;
+    // Add an info line about the added file for each file.
+    output.innerHTML += `<div>File added: ${file.name}</div>`;
 });
