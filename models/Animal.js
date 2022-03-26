@@ -45,9 +45,12 @@ Animal.init(
     },
     species: {
       type: DataTypes.STRING,
+
+      allowNull: false
     },
     type: {
       type: DataTypes.STRING,
+      allowNull: false
     },
     date_created: {
       type: DataTypes.DATE,

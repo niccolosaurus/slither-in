@@ -5,6 +5,7 @@
         "image": "/pics/SlitherIn.png",
         "type":"Snake",
         "species": "Hognose Snake",
+
         "pattern": "Spotted",
         "description": "Yellow with orange spots",
         "gravid": true,
