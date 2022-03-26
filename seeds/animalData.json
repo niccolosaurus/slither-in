@@ -1,9 +1,9 @@
 [
     {
         "name": "Sally",
-        "type_id": 1,
+        "type": "Snake",
         "age": "1 year",
-        "species_id": 1,
+        "species": "Ball Python",
         "pattern": "Spotted",
         "description": "Yellow with orange spots",
         "gravid": true,
@@ -14,9 +14,9 @@
     },
     {
         "name": "Lizzy",
-        "type_id": 2,
+        "type": "lizard",
         "age": "3 Years",
-        "species_id": 7,
+        "species": "Bearded Dragon",
         "pattern": "Striped",
         "description": "Very cuddly lizard",
         "gravid": false,
