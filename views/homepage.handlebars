@@ -3,42 +3,45 @@
     <h3 class="title has-text-centered is-size-3">
       Reptiles
     </h3>
-    <div class="column mt-5 is-8 is-variable is-centered">
+    <div class="columns mt-5 is-full is-variable is-centered">
       {{#each animals as |animal|}}
-      <div class="column is-4-tablet is-12-desktop is-centered">
-        <div class="card">
-          <div class="card-image has-text-centerd px-6">
+      <div class="column is-4-tablet is-4-desktop is-centered"> 
+        <div class="card card-media-margin 1.5rem is-centered">
+          <div class="card-image has-text-centerd is-square">
             <img src="/pics/SiltherIn.png" alt="{{animal.description}}">
           </div>
           <div class="card-content">
             <p class="title is-size-3">{{animal.name}}
             </p>
-            <p class="">Type:{{animal.type_id}}</p>
-            <p>Species:{{animal.species_id}}</p>
-            <p>Morph:{{animal.pattern}}</p>
+            <p class="">Type: {{animaltype.name}}</p>
+            <p>Species: {{animal.species_id}}</p>
+            <p>Morph: {{animal.pattern}}</p>
           </div>
           {{#if logged_in}}
-          <footer class="card-footer">
-            <p class="card-footer-item">
-              <a id="edit" href="/edit" class="has-text-grey">
-                Edit
-              </a>
-            </p>
-            <p class="card-footer-item">
-              <a id="delete" href="/delete" class="has-text-grey">
-                Delete
-              </a>
-            </p>
-            <p class="card-footer-item">
-              <a id="view" href="/view" class="has-text-grey">
-                View
-              </a>
-            </p>
-          </footer>
+            {{!-- {{#if animal == animals.user_id}} --}}
+              <footer class="card-footer">
+                <p class="card-footer-item">
+                  <a id="edit" href="/edit" class="has-text-grey">
+                    Edit
+                  </a>
+                </p>
+                <p class="card-footer-item">
+                  <a id="delete" href="/delete" class="has-text-grey">
+                    Delete
+                  </a>
+                </p>
+                <p class="card-footer-item">
+                  <a id="view" href="/view" class="has-text-grey">
+                    View
+                  </a>
+                </p>
+              </footer>
+            {{!-- {{/if}} --}}
           {{/if}}
         </div>
-      </div>
-      {{/each}}
+      </div> 
+          {{/each}}
     </div>
+
   </div>
 </section>
