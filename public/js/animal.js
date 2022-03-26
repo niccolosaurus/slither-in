@@ -6,7 +6,7 @@ const newAnimalHandler = async (event) => {
     event.preventDefault();
     const name = document.querySelector('#name').value.trim();
     const type = document.querySelector('type').value.trim();
-    const species = document.querySelector('species').value.trim();
+    const species = document.getElementById('species').value;
     const sex = document.querySelector("sex")
     const age = docuemnt.querySelector('age')
     const pattern = document.querySelector('pattern')
@@ -17,6 +17,8 @@ const newAnimalHandler = async (event) => {
     const breeding = document.querySelector('breeding')
 
     if (name && type && species && sex && age && pattern && description && gravid && forSale && deceased && breeding) {
+
+        console.log(species);
         const response = await fetch('/api/animals', {
             method: 'POST',
             body: JSON.stringify({ name, type, species, sex, age, pattern, description, gravid, forSale, deceased, breeding }),
@@ -26,7 +28,7 @@ const newAnimalHandler = async (event) => {
         })
 
         if (response.ok) {
-            document.location.replace('/profile');
+            // document.location.replace('/profile');
         } else {
             alert('Failed to create project');
         }
@@ -42,28 +44,28 @@ const newAnimalHandler = async (event) => {
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
-const firebaseConfig = {
+// const firebaseConfig = {
 
-    apiKey: "AIzaSyCGNeNTDF1spTcG0qonviP3S3NwyYDr1gg",
+//     apiKey: "AIzaSyCGNeNTDF1spTcG0qonviP3S3NwyYDr1gg",
 
-    authDomain: "slither-in-184c6.firebaseapp.com",
+//     authDomain: "slither-in-184c6.firebaseapp.com",
 
-    projectId: "slither-in-184c6",
+//     projectId: "slither-in-184c6",
 
-    storageBucket: "slither-in-184c6.appspot.com",
+//     storageBucket: "slither-in-184c6.appspot.com",
 
-    messagingSenderId: "131632929877",
+//     messagingSenderId: "131632929877",
 
-    appId: "1:131632929877:web:bf27a94cbd40ce2862c8dc",
+//     appId: "1:131632929877:web:bf27a94cbd40ce2862c8dc",
 
-    measurementId: "G-6W779P6JK8"
+//     measurementId: "G-6W779P6JK8"
 
-};
-// Initialize Firebase
+// };
+// // Initialize Firebase
 
-const app = initializeApp(firebaseConfig);
+// const app = initializeApp(firebaseConfig);
 
-const analytics = getAnalytics(app);
+// const analytics = getAnalytics(app);
 
 //Dropzone
 const myDropzone = new window.Dropzone("#my-form");
@@ -75,3 +77,6 @@ myDropzone.on("addedfile", (file) => {
     output.innerHTML += `<div>File added: ${file.name}</div>`;
 });
 
+// var storageRef = firebase.storage().ref();
+// var animalRef = storageRef.child();
+// var animalImageRef = storageRef.child('images')

@@ -1,7 +1,12 @@
 <form action="/api/animals" method="post">
     <section id="firstRow">
-        <div action="/pics" class="dropzone" id="my-form"></div>
-        <pre id ="output"></pre>
+        <div class="container">
+            <div action="/file-upload" class="dropzone" id="my-form">
+               <input type="file" name="myFile">
+            </div>
+
+            <pre id ="output"></pre>
+        </div>
         <div class ="formCard">
             <p>Name or ID:</p>
             <input type="text" name ="name" id="name">
@@ -16,7 +21,7 @@
         </div>
         <div class="formCard">
             <p>Species:</p>
-            <select name="species" id="species">
+            <select name="species_id" id="species">
                 {{!-- species populated by javascript dynamically --}}
             </select>
         </div>
@@ -48,7 +53,7 @@
     <section id="secondRow">
         <div class="formCard">
             <p>Pattern/Morph:</p>
-            <input type="text" name ="morph" id="pattern">
+            <input type="text" name ="pattern" id="pattern">
         </div>
         <div class="formCard">
             <p>Description/Notes:</p>
@@ -89,5 +94,5 @@
 <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 <script src="/js/animal.js"></script>
 <script src="/js/form.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js"></script>
+{{!-- <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js"></script> --}}
