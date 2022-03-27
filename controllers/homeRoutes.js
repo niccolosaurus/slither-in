@@ -76,7 +76,45 @@ router.get('/signup', (req, res) => {
 
     res.render('signup');
 });
+router.put('/:id', async (req, res) => {
+    // update a category by its `id` value
+   try { const updateAnimal = await Animal.update(
+         req.body, 
+      {
+        where: {
+          id: req.params.id
+        }
+      }
+    )
+    .then((animal) => {
+        return Animal.findAll({ where: { id : req.params.id}})
+    })
+    .then((animalName) => {
 
+    })
+    res.json(updateAnimal)
+   } catch (err) {
+     res.status(400).json(err)
+   }
+  });
+router.get('/profile', async (req, res) => {
+    try {
+      // Find the logged in user based on the session ID
+      const userData = await User.findByPk(req.session.user_id, {
+        attributes: { exclude: ['password'] },
+        include: [{ model: Animal }],
+      });
+  
+      const user = userData.get({ plain: true });
+  
+      res.render('profile', {
+        ...user,
+        logged_in: true
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
 
 
 
