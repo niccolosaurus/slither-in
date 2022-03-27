@@ -1,52 +1,66 @@
 <section class="section">
     <div class="container">
-        <h3 class="title has-text-centered is-size-3">
-            Profile Page
-        </h3>
+        
+        <section class="hero is-primary has text-centered">
+  <div class="hero-body has-text-centered">
+    <p class="title">
+      My Profile
+    </p>
+  </div>
+</section>
         <div class="columns mt-5 is-full is-variable is-centered">
             {{#each animals as |animal|}}
             <div class="column is-4-tablet is-4-desktop is-centered">
-                <div class="card card-media-margin 1.5rem is-centered">
+                <div class="card card-media-margin 1.5rem is-centered has-text-centerd">
+                    <div class="has-text-centered has-background-primary-light">
+                     <p class="title is-size-2 has-text-centerd has-text-color-black is-underlined has-text-centered">{{animal.name}}
+                     </p>
+                     </div>
                     <div class="card-image has-text-centerd is-square">
+                        
                         <img src="{{animal.image}}" alt="{{animal.description}}">
+                        <p class="is-right float-right is-underlined ">Date Added: {{format_date animal.date_created}}</p>
                     </div>
-                    <div class="card-content">
-                        <p class="title is-size-3">{{animal.name}}
+
+                    <div class="card-content has-background-primary-light has-text-centered">
+                        
+                        <p class="is-size-4">{{animal.type}}
                         </p>
-                        <p class="is-right float-right">Date Added: {{format_date animal.date_created}}</p>
-                        <p class="">Type: {{animal.type}}
-                        </p>
-                        <p>Species: {{animal.species}}</p>
-                        <p>Morph: {{animal.pattern}}</p>
+                          <p class="is-size-4">{{animal.pattern}}</p>
+                        <p class="is-size-4">{{animal.species}}</p>
+                        <p>{{animal.id}}</p>
                     </div>
-                    <footer class="card-footer">
-                        <p class="card-footer-item">
-                            <a id="view" href="/animal/{{animal.id}}" class="has-text-grey">
+                    <footer class="card-footer ">
+                        <p class="card-footer-item has-background-primary-light">
+                            <a id="view" href="/animal/{{animal.id}}" class="is-size-5">
                                 View
                             </a>
                         </p>
-                        <p class="card-footer-item">
-                            <a id="home" href="/" class="has-text-grey">
+                        <p class="card-footer-item has-background-primary-light">
+                            <a id="home" href="/" class="is-size-5">
                                 Home
                             </a>
                         </p>
-                        <p class="card-footer-item">
-                            <a id="edit" href="/edit" class="has-text-grey">
+                        <p class="card-footer-item has-background-primary-light">
+                            <a id="edit" href="/edit" class="is-size-5">
                                 Edit
                             </a>
-                        </p>
-                        <p class="card-footer-item">
-                            
-                            <a id="delete-button" data-id="{{animal.id}}"  href="/profile" class="has-text-grey">
-                              Delete  
-                            </a>
-                        </p>
-
+                        </p>    
+                           
                     </footer>
+                     
                 </div>
-            </div>
-            {{/each}}
+                <div class="has-text-centered ">
+                <a id="delete-button" data-id="{{animal.id}}"  href="/profile" class="button delete-button has-text-weight-semibold  has-background-danger has-text-black is-size-5 is-hovered has-text-centered">
+                             Delete{{animal.id}}
+                            </a>
+                            
         </div>
+            </div>
+
+          
+        </div>
+          {{/each}}
     </div>
 </section>
 <script src="/js/profile.js"></script>
