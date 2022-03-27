@@ -11,18 +11,15 @@
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 
-<body class="px-0 mx-0 mr-0 pl-0 pr-0">
-  <section class="hero is-primary is-small">
-  <!-- Hero head: will stick at the top -->
-  <div class="hero-head">
+<body class="">
 
-    <nav class="navbar has-background-info-dark">
+  <nav class="navbar has-background-info-dark">
         <div class="navbar-brand">
           <a class="navbar-item" href="/">
             <img src="/pics/SlitherIn.png" alt="Slither-In">
           </a>
            <!-- <h1 class="is-size-2 has-text-white has-text-weight-bold mx-5 my-2">Tech Mindshare</h1> -->
-            <a class="navbar-burger" id="burger">
+            <a class="navbar-burger has-text-white" id="burger">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -31,25 +28,26 @@
 
         <div class="navbar-menu" id="nav-links">
           <div class="navbar-end">
-            <a class="navbar-item is-active" href="/">
+            <a class="navbar-item is-active has-text-white" href="/">
               Home
             </a>
             {{#if logged_in}}
-            <a class="navbar-item is-active" id="logout-button">
+            <a class="navbar-item is-active has-text-white" id="logout-button">
               Logout
             </a>
-            <a class="navbar-item is-active" href="/animal">
+            <a class="navbar-item is-active has-text-white" href="/animal">
               Create Animal
             </a>
             {{else}}
-            <a class="navbar-item is-active" href="/login">Login</a>
+            <a class="navbar-item is-active has-text-white" href="/login">Login</a>
             {{/if}}
           </div>
         </div>
       </div>
     </nav>
 
-  </div>
+  <section class="hero is-primary is-small">
+  <!-- Hero head: will stick at the top -->
    <div class="hero-body" id="navbarMenuHeroA">
     <div class="container has-text-centered">
       <p class="title is-1">
@@ -63,15 +61,11 @@
   </section>
   
   </div>
-  <div>
-    <main class="container container-fluid mt-5 px-0 mx-0 px-0 mx-0 mr-0 pl-0 pr-0">
+
+    <main class="container container-fluid">
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
-    <footer>
-
-    </footer>
-  </div>
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
