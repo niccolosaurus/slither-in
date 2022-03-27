@@ -1,99 +1,138 @@
-<form id="animal-form">
-    <section id="firstRow">
-        <div class="container">
-            <div action="/file-upload" class="dropzone" id="my-form">
-               <input type="file" name="myFile" id="myFile">
+<form id="animal-form" class="columns">
+    <div class="column">
+
+        <section id="firstRow">
+            <div class="columns">
+                <div class="container column">
+                    <div action="/file-upload" class="dropzone" id="my-form">
+                        <input type="file" name="myFile" id="myFile">
+                    </div>
+
+                    <pre id="output"></pre>
+                </div>
+
+                <div class="column">
+                    <div class="rows">
+                        <div class="row">
+                            <div class="columns">
+                                <div class="formCard column">
+                                    <p>Name or ID:</p>
+                                    <input type="text" name="name" id="name">
+                                </div>
+                                <div class="formCard column">
+                                    <p>Type:</p>
+                                    <select name="type" id="animalType">
+                                        <option></option>
+                                        <option value="1">Snake</option>
+                                        <option value="2">Lizard</option>
+                                        <option value="3">Tortoise</option>
+                                    </select>
+                                </div>
+                                <div class="formCard column">
+                                    <p>Species:</p>
+                                    <select name="species" id="species">
+                                        {{!-- species populated by javascript dynamically --}}
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="columns">
+                                <div class="formCard column">
+                                    <p>Sex</p>
+                                    <select name="sex" id="sex">
+                                        {{!-- <option value="blank" id="blank"></option> --}}
+                                        <option></option>
+                                        <option value="female">Female</option>
+                                        <option value="male" id="male">Male</option>
+
+                                    </select>
+                                </div>
+                                <div class="formCard column">
+                                    <p>Age:</p>
+                                    <select name="age" id="age">
+                                        <option value="underYear">Less Than One Year</option>
+                                        <option value="oneYear">1 Year</option>
+                                        <option value="twoYear">2 Years</option>
+                                        <option value="threeYear">3 Years</option>
+                                        <option value="fourYear">4 Years</option>
+                                        <option value="fiveYear">5 Years</option>
+                                        <option value="sixYear">6 Years</option>
+                                        <option value="sevenYear">7 Years</option>
+                                        <option value="eightYear">8 Years</option>
+                                        <option value="nineYear">9 Years</option>
+                                        <option value="tenYear">10 Years</option>
+                                        <option value="overTenYear">Over 10 years</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="secondRow">
+            <div class="rows">
+                <div class="row">
+                    <div class="columns">
+                        <div class="formCard column">
+                            <p>Pattern/Morph:</p>
+                            <input type="text" name="pattern" id="pattern">
+                        </div>
+                        <div class="formCard column">
+                            <p>Description/Notes:</p>
+                            <input type="text" name="description" id="description">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="columns">
+                        <div class="formCard column" id="maleHidden">
+                            <p>Gravid:</p>
+                            <input type="checkbox" id="gravid" onclick="onClick()" />
+                            <h4 id="gravid-message" style="color: green">Expect eggs in 28 to 48 days!</h4>
+                            {{!-- <p id="gravidChecked">Expect eggs in 28 to 48 days</p> --}}
+                        </div>
+                        <div class="formCard column">
+                            <p>For Sale</p>
+                            <input type="checkbox" id="forSale" name="forSale">
+                        </div>
+                        <div class="formCard column" id="maleHidden">
+                            <p>Deceased</p>
+                            <input type="checkbox" id="deceased" name="deceased">
+                        </div>
+                        <div class="formCard column">
+                            <p>Breeding History</p>
+                            <input type="text" name="breeding" id="breeding">
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
 
-            <pre id ="output"></pre>
-        </div>
-        <div class ="formCard">
-            <p>Name or ID:</p>
-            <input type="text" name ="name" id="name">
-        </div>
-        <div class="formCard">
-            <p>Type:</p>
-            <select name="type" id="animalType">
-                <option></option>
-                <option value="1">Snake</option>
-                <option value="2">Lizard</option>
-                <option value="3">Tortoise</option>
-            </select>
-        </div>
-        <div class="formCard">
-            <p>Species:</p>
-            <select name="species" id="species">
-                {{!-- species populated by javascript dynamically --}}
-            </select>
-        </div>
-        <div class="formCard">
-            <p>Sex</p>
-            <select name = "sex" id = "sex">
-                {{!-- <option value="blank" id="blank"></option> --}}
-                <option></option>
-                <option value="female">Female</option>
-                <option value="male" id="male">Male</option>
-                
-            </select>
-        </div>
-        <div class="formCard">
-            <p>Age:</p>
-            <select name="age" id="age">
-                <option value="underYear">Less Than One Year</option>
-                <option value="oneYear">1 Year</option>
-                <option value="twoYear">2 Years</option>
-                <option value="threeYear">3 Years</option>
-                <option value="fourYear">4 Years</option>
-                <option value="fiveYear">5 Years</option>
-                <option value="sixYear">6 Years</option>
-                <option value="sevenYear">7 Years</option>
-                <option value="eightYear">8 Years</option>
-                <option value="nineYear">9 Years</option>
-                <option value="tenYear">10 Years</option>
-                <option value="overTenYear">Over 10 years</option>
-            </select>
-        </div>
-    </section>
-    <section id="secondRow" class="mt-5 px-0 mx-0 px-0 mx-0 mr-0 pl-0 pr-0">
-        <div class="formCard">
-            <p>Pattern/Morph:</p>
-            <input type="text" name ="pattern" id="pattern">
-        </div>
-        <div class="formCard">
-            <p>Description/Notes:</p>
-            <input type="text" name="description" id="description">
-        </div>
-        <div class="formCard" id="maleHidden">
-            <p>Gravid:</p>
-            <input type="checkbox" id="gravid" onclick="onClick()"/>
-            <h4 id="gravid-message" style="color: green">Expect eggs in 28 to 48 days!</h4>
-            {{!-- <p id ="gravidChecked">Expect eggs in 28 to 48 days</p> --}}
-        </div>
-        <div class="formCard">
-            <p>For Sale</p>
-            <input type="checkbox" id="forSale" name="forSale">
-        </div>
-        <div class="formCard" id="maleHidden">
-            <p>Deceased</p>
-            <input type="checkbox" id="deceased" name="deceased">
-        </div>
-        <div class="formCard">
-            <p>Breeding History</p>
-            <input type="text" name="breeding" id="breeding">
-        </div>
-    </section>
+        </section>
+    </div>
 
-    {{!-- <div id="sidepanel">
-        <div class="formCard">
-            <p>Male Parent</p>
-            <button id="maleAdd">Add Parent</button>
-        </div>
-        <div class="formCard">
-            <p>Male Parent</p>
-            <button id="femaleAdd">Add Parent</button>
-        </div>
-    </div> --}}
-    <button id = "submitForm">Add Animal</button>
+    <div class="column">
+        {{!-- <div id="sidepanel">
+            <div class="formCard">
+                <p>Male Parent</p>
+                <button id="maleAdd">Add Parent</button>
+            </div>
+            <div class="formCard">
+                <p>Male Parent</p>
+                <button id="femaleAdd">Add Parent</button>
+            </div>
+        </div> --}}
+        <button id="submitForm">Add Animal</button>
+    </div>
 </form>
 <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
