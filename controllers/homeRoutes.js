@@ -50,8 +50,8 @@ router.get('/animal/:id', async (req, res) => {
 
         const animal = animalData.get({ plain: true });
 
-        res.render('animal', {
-            ...animal,
+        res.render('view', {
+            animal,
             logged_in: req.session.logged_in
         });
     } catch (err) {
