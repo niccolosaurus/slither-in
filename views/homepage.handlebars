@@ -5,10 +5,23 @@
     </h3>
     <div class="columns mt-5 is-full is-variable is-centered">
       {{#each animals as |animal|}}
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <div class="column is-4-tablet is-4-desktop is-centered"> 
+        <div class="card card-media-margin 1.5rem is-centered">
+          <div class="card-image has-text-centerd is-square">
+            <img src="/pics/SiltherIn.png" alt="{{animal.description}}">
+=======
+      <div class="column is-4-tablet is-12-desktop is-centered">
+        <div class="card">
+          <div class="card-image has-text-centerd px-6">
+=======
       <div class="column is-4-tablet is-4-desktop is-centered">
         <div class="card card-media-margin 1.5rem is-centered">
           <div class="card-image has-text-centerd is-square">
+>>>>>>> main
             <img src="{{animal.image}}" alt="{{animal.description}}">
+>>>>>>> main
           </div>
           <div class="card-content">
             <p class="title is-size-3">{{animal.name}}
@@ -19,6 +32,29 @@
             <p>Species: {{animal.species}}</p>
             <p>Morph: {{animal.pattern}}</p>
           </div>
+<<<<<<< HEAD
+          {{#if logged_in}}
+            {{!-- {{#if animal == animals.user_id}} --}}
+              <footer class="card-footer">
+                <p class="card-footer-item">
+                  <a id="edit" href="/edit" class="has-text-grey">
+                    Edit
+                  </a>
+                </p>
+                <p class="card-footer-item">
+                  <a id="delete" href="/delete" class="has-text-grey">
+                    Delete
+                  </a>
+                </p>
+                <p class="card-footer-item">
+                  <a id="view" href="/view" class="has-text-grey">
+                    View
+                  </a>
+                </p>
+              </footer>
+            {{!-- {{/if}} --}}
+          {{/if}}
+=======
           <footer class="card-footer">
             <p class="card-footer-item">
               <a id="view" href="/animal/{{animal.id}}" class="has-text-grey">
@@ -38,9 +74,11 @@
             </p>
             {{/if}}
           </footer>
+>>>>>>> main
         </div>
-      </div>
-      {{/each}}
+      </div> 
+          {{/each}}
     </div>
+
   </div>
 </section>
