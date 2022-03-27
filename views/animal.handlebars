@@ -5,7 +5,7 @@
             <div class="columns">
                 <div class="container column">
                     <div action="/file-upload" class="dropzone" id="my-form">
-                <input type="file" name="myFile" id="myFile"> 
+                {{!-- <input type="file" name="myFile" id="myFile">  --}}
                     </div>
 
                     <pre id="output"></pre>
@@ -109,7 +109,10 @@
                         </div>
                         <div class="formCard column">
                             <p>Breeding History</p>
-                            <input type="text" name="breeding" id="breeding">
+                            <select name="breeding" id="breeding">
+                                <option></option>
+                                <option value="Low Risk">Low Risk</option>
+                                <option value="High Risk">High Risk</option>
                         </div>
                     </div>
 
