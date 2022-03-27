@@ -9,15 +9,16 @@
         <div class="card card-media-margin 1.5rem is-centered">
           <div class="card-image has-text-centerd is-square">
             <img src="{{animal.image}}" alt="{{animal.description}}">
+             <p class="is-right float-right is-underlinded">Date Added: {{format_date animal.date_created}}</p>
           </div>
           <div class="card-content">
             <p class="title is-size-3">{{animal.name}}
             </p>
-            <p class="is-right float-right">Date Added: {{format_date animal.date_created}}</p>
-            <p class="">Type: {{animal.type}}
+            <p class="">{{animal.type}}
             </p>
-            <p>Species: {{animal.species}}</p>
-            <p>Morph: {{animal.pattern}}</p>
+            <p>{{animal.pattern}}</p>
+            <p>{{animal.species}}</p>
+            
           </div>
           <footer class="card-footer">
             <p class="card-footer-item">

@@ -1,4 +1,4 @@
-let currentImage = null;
+let currentImage 
 
 const newAnimalHandler = async (event) => {
     event.preventDefault();
@@ -13,6 +13,7 @@ const newAnimalHandler = async (event) => {
         method: 'POST',
         body: JSON.stringify({ 
             ...formValue,
+            
             image: currentImage,
         }),
         headers: {
