@@ -9,11 +9,11 @@ typeChoice.onchange = function() {
 
     speciesSelect.innerHTML = "";
 
-    if (typeChoice.value === "1") {
+    if (typeChoice.value === "Snake") {
         options = ["Ball Python", "Boa Constrictor", "Kingsnake", "Hognose Snake", "Reticulated Python"]
-    } else if (typeChoice.value === "2") {
+    } else if (typeChoice.value === "Lizard") {
         options = ["Leopard Gecko", "Bearded Dragon", "Skink", "Crested Gecko", "Tokay Gecko"]
-    } else if (typeChoice.value === "3") {
+    } else if (typeChoice.value === "Tortoise") {
         options = ["Spurred Tortoise", "Leopard Tortoise", "Greek Tortoise", "Red-Footed Tortoise"]
     } else {options = []}
     var specChoices
