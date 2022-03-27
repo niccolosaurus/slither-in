@@ -13,7 +13,7 @@
 
 <body class="">
 
-  <nav class="navbar has-background-info-dark">
+  <nav class="navbar is-primary">
         <div class="navbar-brand">
           <a class="navbar-item" href="/">
             <img src="/pics/SlitherIn.png" alt="Slither-In">
@@ -26,23 +26,23 @@
             </a>
         </div>
 
-        <div class="navbar-menu" id="nav-links">
+        <div class="navbar-menu has-background-primary" id="nav-links">
           <div class="navbar-end">
-            <a class="navbar-item is-active has-text-white" href="/">
+            <a class="navbar-item has-background-primary is-active has-text-white " href="/">
               Home
             </a>
             {{#if logged_in}}
-            <a class="navbar-item is-active has-text-white" id="logout-button">
+            <a class="navbar-item has-background-primary is-active has-text-white" id="logout-button">
               Logout
             </a>
-            <a class="navbar-item is-active has-text-white" href="/animal">
+            <a class="navbar-item is-active has-background-primary has-text-white" href="/animal">
               Create Animal
             </a>
-            <a class="navbar-item is-active has-text-white" href="/profile">
+            <a class="navbar-item is-active has-text-white has-background-primary" href="/profile">
               Profile
             </a>
             {{else}}
-            <a class="navbar-item is-active has-text-white" href="/login">Login</a>
+            <a class="navbar-item has-background-primary is-active has-text-white" href="/login">Login</a>
             {{/if}}
           </div>
         </div>
