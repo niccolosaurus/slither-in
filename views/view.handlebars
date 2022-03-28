@@ -15,10 +15,17 @@
             <p>{{animal.pattern}}</p>
             <p> {{animal.species}}</p>
             <p>{{animal.description}}</p>
-            <p>Gravid: {{animal.gravid}}</p>
+              {{#if animal.gravid}}
+            <p>Gravid</p>
+              {{/if}}
             <p>{{animal.age}} old</p>
             <p>{{animal.sex}}</p>
-            <p>Alive:{{animal.deceased}}</p>
+              {{#if animal.forSale}}
+            <p>For Sale</p>
+              {{/if}}
+              {{#if animal.deceased}}
+            <p>Deceased</p>
+              {{/if}}
           </div>
           <footer class="card-footer">
             <p class="card-footer-item">
@@ -34,3 +41,4 @@
     </div>
   </div>
 </section>
+
