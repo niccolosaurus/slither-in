@@ -9,27 +9,44 @@
                     <div class="rows">
                         <div class="row">
                             <div class="columns is-gapless">
-                                <div class="formCard column box has-background-info mr-6">
-                                    <p class="has-text-centered has-text-white has-text-weight-bold py-4">Name or ID:</p>
-                                    <input type="text" name="name" id="name" class="input-normal"> </input>
-                                    <p class="py-2"></p>
+                                <div class="formCard column box has-background-info mr-6 is-flex is-justify-content-center">
+                                    <div>
+                                        <p class="has-text-centered has-text-white has-text-weight-bold py-4 ">Name or ID:</p>
+                                        <input type="text" name="name" id="name" class="input"> </input>
+                                        <p class="pb-4"></p>
+                                    </div>
+
                                 </div>
-                                <div class="formCard column box has-background-info mr-6">
-                                    <p class="has-text-centered has-text-white has-text-weight-bold py-4">Type:</p>
-                                    <select name="type" id="animalType">
-                                        <option></option>
-                                        <option value="Snake">Snake</option>
-                                        <option value="Lizard">Lizard</option>
-                                        <option value="Tortoise">Tortoise</option>
-                                    </select>
-                                    <p class="py-2"></p>
+                                <div class="formCard column box has-background-info mr-6 is-flex is-justify-content-center">
+                                    <div>
+                                        <p class="has-text-centered has-text-white has-text-weight-bold py-4">Type:</p>
+                                        <div class="control">
+                                            <div class="select">
+                                                <select name="type" id="animalType">
+                                                    <option></option>
+                                                    <option value="Snake">Snake</option>
+                                                    <option value="Lizard">Lizard</option>
+                                                    <option value="Tortoise">Tortoise</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <p class="pb-4"></p>
+                                    </div>
+
                                 </div>
-                                <div class="formCard column box has-background-info mr-6">
+                                <div class="formCard column box has-background-info mr-6 is-flex is-justify-content-center">
+                                    <div>
                                     <p class="has-text-centered has-text-white has-text-weight-bold py-4">Species:</p>
-                                    <select name="species" id="species">
-                                        {{!-- species populated by javascript dynamically --}}
-                                    </select>
-                                    <p class="py-2"></p>
+                                    <div class="control">
+                                        <div class="select">
+                                            <select name="species" id="species">
+                                                {{!-- species populated by javascript dynamically --}}
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <p class="pb-4"></p>
+                                    </div>
+
                                 </div>
                             </div>
 
@@ -37,37 +54,49 @@
 
                         <div class="row mt-5">
                             <div class="columns is-gapless">
-                                <div class="formCard column box has-background-info mr-6">
+                                <div class="formCard column box has-background-info mr-6 is-flex is-justify-content-center">
+                                    <div>
                                     <p class="has-text-centered has-text-white has-text-weight-bold py-4">Sex</p>
-                                    <select name="sex" id="sex">
-                                        {{!-- <option value="blank" id="blank"></option> --}}
-                                        <option></option>
-                                        <option value="female">Female</option>
-                                        <option value="male" id="male">Male</option>
-                                    </select>
-                                    <p class="py-2"></p>
+                                    <div class="control">
+                                        <div class="select">
+                                            <select name="sex" id="sex">
+                                                {{!-- <option value="blank" id="blank"></option> --}}
+                                                <option></option>
+                                                <option value="female">Female</option>
+                                                <option value="male" id="male">Male</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <p class="pb-4"></p>
+                                    </div>
                                 </div>
-                                <div class="formCard column box has-background-info mr-6">
-                                    <p class="has-text-centered has-text-white has-text-weight-bold py-4">Age:</p>
-                                    <select name="age" id="age">
-                                        <option value="Under a Year">Less Than One Year</option>
-                                        <option value="1 Year">1 Year</option>
-                                        <option value="2 Years">2 Years</option>
-                                        <option value="3 Years">3 Years</option>
-                                        <option value="4 Years">4 Years</option>
-                                        <option value="5 Years">5 Years</option>
-                                        <option value="6 Years">6 Years</option>
-                                        <option value="7 Years">7 Years</option>
-                                        <option value="8 Years">8 Years</option>
-                                        <option value="9 Years">9 Years</option>
-                                        <option value="10 Years">10 Years</option>
-                                        <option value="10+ Years">Over 10 years</option>
-                                    </select>
-                                    <p class="py-2"></p>
+                                <div class="formCard column box has-background-info mr-6 is-flex is-justify-content-center">
+                                    <div>
+                                        <p class="has-text-centered has-text-white has-text-weight-bold py-4">Age:</p>
+                                        <div class="control">
+                                            <div class="select">
+                                                <select name="age" id="age">
+                                                    <option value="Under a Year">Less Than One Year</option>
+                                                    <option value="1 Year">1 Year</option>
+                                                    <option value="2 Years">2 Years</option>
+                                                    <option value="3 Years">3 Years</option>
+                                                    <option value="4 Years">4 Years</option>
+                                                    <option value="5 Years">5 Years</option>
+                                                    <option value="6 Years">6 Years</option>
+                                                    <option value="7 Years">7 Years</option>
+                                                    <option value="8 Years">8 Years</option>
+                                                    <option value="9 Years">9 Years</option>
+                                                    <option value="10 Years">10 Years</option>
+                                                    <option value="10+ Years">Over 10 years</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <p class="pb-4"></p>
+                                    </div>
                                 </div>
                             </div>
-
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -77,15 +106,19 @@
             <div class="rows">
                 <div class="row mt-5">
                     <div class="columns is-gapless">
-                        <div class="formCard column box has-background-info mr-6">
-                            <p class="has-text-centered has-text-white has-text-weight-bold py-4">Pattern/Morph:</p>
-                            <input type="text" name="pattern" id="pattern" class="input-normal"> </input>
-                            <p class="py-2"></p>
+                        <div class="formCard column box has-background-info mr-6 is-flex is-justify-content-center">
+                            <div>
+                                <p class="has-text-centered has-text-white has-text-weight-bold py-4">Pattern/Morph:</p>
+                                <textarea type="text" name="pattern" id="pattern" class="textarea" rows="5"></textarea>
+                                <p class="pb-4"></p>
+                            </div>
                         </div>
-                        <div class="formCard column box has-background-info mr-6">
-                            <p class="has-text-centered has-text-white has-text-weight-bold py-4">Description/Notes:</p>
-                            <input type="text" name="description" id="description" class="input-normal"> </input>
-                            <p class="py-2"></p>
+                        <div class="formCard column box has-background-info mr-6 is-flex is-justify-content-center">
+                            <div>
+                                <p class="has-text-centered has-text-white has-text-weight-bold py-4">Description/Notes:</p>
+                                <textarea type="text" name="description" id="description" class="textarea" rows="5"></textarea>
+                                <p class="pb-4"></p>
+                            </div>
                         </div>
                     </div>
 
@@ -93,27 +126,43 @@
 
                 <div class="row mt-5">
                     <div class="columns is-gapless">
-                        <div class="formCard column box has-background-info mr-6" id="maleHidden">
-                            <p class="has-text-centered has-text-white has-text-weight-bold py-4">Gravid:</p>
-                            <input type="checkbox" id="gravid" onclick="onClick()" </input>
-                            <h4 id="gravid-message" style="color: green">Expect eggs in 28 to 48 days!</h4>
-                            {{!-- <p id="gravidChecked">Expect eggs in 28 to 48 days</p> --}} 
-                            <p class="py-2"></p>
+                        <div class="formCard column box has-background-info mr-6 is-flex is-justify-content-center" id="maleHidden">
+                            <div>
+                                <p class="has-text-centered has-text-white has-text-weight-bold py-4">Gravid:</p>
+                                <label class="checkbox">
+                                    <input type="checkbox" id="gravid" onclick="onClick()"></input>
+                                </label>
+                                <div class="is-flex is-justify-content-center">
+                                    <h4 id="gravid-message" style="color: white">Expect eggs in 28 to 48 days!</h4>
+                                    {{!-- <p id="gravidChecked">Expect eggs in 28 to 48 days</p> --}} 
+                                </div>
+                                <p class="pb-4"></p>
+                            </div>
                         </div>
-                        <div class="formCard column box has-background-info mr-6">
-                            <p class="has-text-centered has-text-white has-text-weight-bold py-4">For Sale</p>
-                            <input type="checkbox" id="forSale" name="forSale"> </input>
-                            <p class="py-2"></p>
+                        <div class="formCard column box has-background-info mr-6 is-flex is-justify-content-center">
+                            <div>
+                                <p class="has-text-centered has-text-white has-text-weight-bold py-4">For Sale</p>
+                                <label class="checkbox">
+                                    <input type="checkbox" id="forSale" name="forSale"> </input>
+                                </label>
+                                <p class="pb-4"></p>
+                            </div>
                         </div>
-                        <div class="formCard column box has-background-info mr-6" id="maleHidden">
-                            <p class="has-text-centered has-text-white has-text-weight-bold py-4">Deceased</p>
-                            <input type="checkbox" id="deceased" name="deceased"> </input>
-                            <p class="py-2"></p>
+                        <div class="formCard column box has-background-info mr-6 is-flex is-justify-content-center" id="maleHidden">
+                            <div>
+                                <p class="has-text-centered has-text-white has-text-weight-bold py-4">Deceased</p>
+                                <label class="checkbox">
+                                    <input type="checkbox" id="deceased" name="deceased"> </input>
+                                </label>
+                                <p class="pb-4"></p>
+                            </div>
                         </div>
-                        <div class="formCard column box has-background-info mr-6">
-                            <p class="has-text-centered has-text-white has-text-weight-bold py-4">Breeding History</p>
-                            <input type="text" name="breeding" id="breeding" class="input-normal"> </input>
-                            <p class="py-2"></p>
+                        <div class="formCard column box has-background-info mr-6 is-flex is-justify-content-center">
+                            <div>
+                                <p class="has-text-centered has-text-white has-text-weight-bold py-4">Breeding History</p>
+                                <textarea type="text" name="breeding" id="breeding" class="textarea" rows="5"> </textarea>
+                                <p class="pb-4"></p>
+                            </div>
                         </div>
                     </div>
 
@@ -149,7 +198,7 @@
         <pre id="output"></pre>
         
     </div>
-    <div class="rows">
+    <div class="rows is-flex is-justify-content-center">
         <button id="animal-form" class="button is-link">Add Animal</button>
     </div>
 
