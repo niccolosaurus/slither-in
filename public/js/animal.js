@@ -37,7 +37,7 @@ const newAnimalHandler = async (event) => {
         formValue.forSale = true
     };
 
-    alert("Here" + JSON.stringify(formValue));
+    // alert("Here" + JSON.stringify(formValue));
     const response = await fetch('/api/animals', {
         method: 'POST',
         body: JSON.stringify({
