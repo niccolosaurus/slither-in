@@ -2,25 +2,19 @@
     <div class="column">
 
         <section id="firstRow">
-            <div class="columns">
-                <div class="container column">
-                    <div action="/file-upload" class="dropzone" id="my-form">
-                <input type="file" name="myFile" id="myFile"> 
-                    </div>
+            <div class="columns is-gapless">
 
-                    <pre id="output"></pre>
-                </div>
 
                 <div class="column">
                     <div class="rows">
                         <div class="row">
-                            <div class="columns">
-                                <div class="formCard column">
-                                    <p>Name or ID:</p>
-                                    <input type="text" name="name" id="name">
+                            <div class="columns is-gapless">
+                                <div class="formCard column box has-background-info mr-2">
+                                    <p class="has-text-centered has-text-white">Name or ID:</p>
+                                    <input type="text" name="name" id="name" class="input-normal"> </input>
                                 </div>
-                                <div class="formCard column">
-                                    <p>Type:</p>
+                                <div class="formCard column box has-background-info mr-2">
+                                    <p class="has-text-centered">Type:</p>
                                     <select name="type" id="animalType">
                                         <option></option>
                                         <option value="Snake">Snake</option>
@@ -28,8 +22,8 @@
                                         <option value="Tortoise">Tortoise</option>
                                     </select>
                                 </div>
-                                <div class="formCard column">
-                                    <p>Species:</p>
+                                <div class="formCard column box has-background-info mr-2">
+                                    <p class="has-text-centered">Species:</p>
                                     <select name="species" id="species">
                                         {{!-- species populated by javascript dynamically --}}
                                     </select>
@@ -38,10 +32,10 @@
 
                         </div>
 
-                        <div class="row">
-                            <div class="columns">
-                                <div class="formCard column">
-                                    <p>Sex</p>
+                        <div class="row mt-2">
+                            <div class="columns is-gapless">
+                                <div class="formCard column box has-background-info mr-2">
+                                    <p class="has-text-centered">Sex</p>
                                     <select name="sex" id="sex">
                                         {{!-- <option value="blank" id="blank"></option> --}}
                                         <option></option>
@@ -50,8 +44,8 @@
 
                                     </select>
                                 </div>
-                                <div class="formCard column">
-                                    <p>Age:</p>
+                                <div class="formCard column box has-background-info mr-2">
+                                    <p class="has-text-centered">Age:</p>
                                     <select name="age" id="age">
                                         <option value="Under a Year">Less Than One Year</option>
                                         <option value="1 Year">1 Year</option>
@@ -77,39 +71,39 @@
 
         <section id="secondRow">
             <div class="rows">
-                <div class="row">
-                    <div class="columns">
-                        <div class="formCard column">
-                            <p>Pattern/Morph:</p>
-                            <input type="text" name="pattern" id="pattern">
+                <div class="row mt-2">
+                    <div class="columns is-gapless">
+                        <div class="formCard column box has-background-info mr-2">
+                            <p class="has-text-centered">Pattern/Morph:</p>
+                            <input type="text" name="pattern" id="pattern" class="input-normal"> </input>
                         </div>
-                        <div class="formCard column">
-                            <p>Description/Notes:</p>
-                            <input type="text" name="description" id="description">
+                        <div class="formCard column box has-background-info mr-2">
+                            <p class="has-text-centered">Description/Notes:</p>
+                            <input type="text" name="description" id="description" class="input-normal"> </input>
                         </div>
                     </div>
 
                 </div>
 
-                <div class="row">
-                    <div class="columns">
-                        <div class="formCard column" id="maleHidden">
-                            <p>Gravid:</p>
-                            <input type="checkbox" id="gravid" onclick="onClick()" />
+                <div class="row mt-2">
+                    <div class="columns is-gapless">
+                        <div class="formCard column box has-background-info mr-2" id="maleHidden">
+                            <p class="has-text-centered">Gravid:</p>
+                            <input type="checkbox" id="gravid" onclick="onClick()" </input>
                             <h4 id="gravid-message" style="color: green">Expect eggs in 28 to 48 days!</h4>
                             {{!-- <p id="gravidChecked">Expect eggs in 28 to 48 days</p> --}}
                         </div>
-                        <div class="formCard column">
-                            <p>For Sale</p>
-                            <input type="checkbox" id="forSale" name="forSale">
+                        <div class="formCard column box has-background-info mr-2">
+                            <p class="has-text-centered">For Sale</p>
+                            <input type="checkbox" id="forSale" name="forSale"> </input>
                         </div>
-                        <div class="formCard column" id="maleHidden">
-                            <p>Deceased</p>
-                            <input type="checkbox" id="deceased" name="deceased">
+                        <div class="formCard column box has-background-info mr-2" id="maleHidden">
+                            <p class="has-text-centered">Deceased</p>
+                            <input type="checkbox" id="deceased" name="deceased"> </input>
                         </div>
-                        <div class="formCard column">
-                            <p>Breeding History</p>
-                            <input type="text" name="breeding" id="breeding">
+                        <div class="formCard column box has-background-info mr-2">
+                            <p class="has-text-centered">Breeding History</p>
+                            <input type="text" name="breeding" id="breeding" class="input-normal"> </input>
                         </div>
                     </div>
 
@@ -120,7 +114,8 @@
         </section>
     </div>
 
-    <div class="column">
+    <!--
+    {{!-- <div class="column">
         {{!-- <div id="sidepanel">
             <div class="formCard">
                 <p>Male Parent</p>
@@ -132,8 +127,29 @@
             </div>
         </div> --}}
         <button id="submitForm">Add Animal</button>
-    </div>
+    </div> --}}
+-->
+
+
+
+
 </form>
+
+<section class="mt-1">
+    <div class="container column">
+        <div action="/file-upload" class="dropzone" id="my-form">
+            <input type="file" name="myFile" id="myFile"> </input>
+        </div>
+
+        <pre id="output"></pre>
+        
+    </div>
+    <div class="rows">
+        <button id="submitForm" class="button is-link">Add Animal</button>
+    </div>
+
+</section>
+
 <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 <script src="/js/animal.js"></script>
