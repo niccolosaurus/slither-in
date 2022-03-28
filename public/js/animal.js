@@ -1,19 +1,48 @@
-let currentImage 
+let currentImage
 
 const newAnimalHandler = async (event) => {
     event.preventDefault();
-    
+
     const form = document.getElementById('animal-form');
     const formData = new FormData(form);
-    
+
+    //sample form value object
+    /* {
+        "name":"Snake 1",
+        "type":"Snake",
+        "species":"Boa Constrictor",
+        "sex":"female",
+        "age":"2 Years",
+        "pattern":"Albino",
+        "description":"Pretty",
+        "breeding":"Good"
+        "gravid": false
+    } */
+
+    const gravidCheckbox = document.getElementById("gravid").checked;
+    const deceasedCheckbox = document.getElementById("deceased").checked;
+    const forSaleCheckbox = document.getElementById("forSale").checked;
+
     let formValue = {};
     formData.forEach((value, key) => formValue[key] = value);
+    if (gravidCheckbox) {
+        formValue.gravid = true
+    };
 
+    if (deceasedCheckbox) {
+        formValue.deceased = true
+    };
+
+    if (forSaleCheckbox) {
+        formValue.forSale = true
+    };
+
+    alert("Here" + JSON.stringify(formValue));
     const response = await fetch('/api/animals', {
         method: 'POST',
-        body: JSON.stringify({ 
+        body: JSON.stringify({
             ...formValue,
-            
+
             image: currentImage,
         }),
         headers: {
@@ -50,7 +79,7 @@ function configureDropzone() {
     const myDropzone = new window.Dropzone("#my-form", {
         accept: (file, done) => {
             const app = firebase.initializeApp(firebaseConfig);
- 
+
             const output = document.querySelector("#output");
             output.innerHTML += `<div>File added: ${file.name}</div>`;
 
@@ -87,12 +116,28 @@ dropdown.onchange = function () {
 };
 
 function onClick() {
-    var checkBox = document.getElementById("gravid");
-    var displayMessage = document.getElementById("gravid-message");
-    if (checkBox.checked == true) {
-        displayMessage.style.display = "block";
+    var gravidCheckBox = document.getElementById("gravid");
+    var gravidDisplayMessage = document.getElementById("gravid-message");
+    if (gravidCheckBox.checked == true) {
+        gravidDisplayMessage.style.display = "block";
     } else {
-        displayMessage.style.display = "none";
+        gravidDisplayMessage.style.display = "none";
+    }
+
+    var forSaleCheckbox = document.getElementById("forSale");
+    var forSaleDisplayMessage = document.getElementById("for-sale-message");
+    if (forSaleCheckbox.checked == true) {
+        forSaleDisplayMessage.style.display = "block";
+    } else {
+        forSaleDisplayMessage.style.display = "none";
+    }
+
+    var deceasedCheckBox = document.getElementById("deceased");
+    var deceasedDisplayMessage = document.getElementById("deceased-message");
+    if (deceasedCheckBox.checked == true) {
+        deceasedDisplayMessage.style.display = "block";
+    } else {
+        deceasedDisplayMessage.style.display = "none";
     }
 }
 
