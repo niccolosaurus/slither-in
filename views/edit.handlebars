@@ -1,0 +1,99 @@
+
+
+
+<!-- <form id="photo-form">
+    <section id="firstRow">
+        <div class="container">
+            <div action="/file-upload" class="dropzone" id="my-form">
+               <input type="file" name="myFile" id="myFile">
+            </div>
+           
+</form> -->
+ 
+<section class="section has-background-primary-light">
+<form id="editForm">  
+<div class="container">
+<p class="title has-text-black has-text-centered">{{animal.name}}</p>
+<div class="subtitle has-text-centered is-underlined">
+    Animal-id
+<p class="has-text-centered" id="animal-id">{{animal.id}}</p>
+</div>
+<div class="field">
+  <label class="label">Update Name</label>
+  <div class="control">
+    <input id="name" class="input" type="text" placeholder=" Enter new name {{animal.name}}">
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">Update Description</label>
+  <div class="control">
+     <textarea id="description" class="textarea" value="{{animal.description}}"  placeholder="Enter updated description"></textarea>
+  </div>
+</div>
+
+<div class="field">
+  <div class="control">
+    <label class="checkbox">
+      <input type="checkbox" id="deceased">
+      Deceased
+  </div>
+</div>
+
+
+<div class="field">
+  <div class="control">
+    <label class="checkbox">
+      <input type="checkbox" id="sale">
+      For Sale
+    </label>
+  </div>
+</div>
+
+<div class="field">
+  <div class="control">
+    <label class="checkbox">
+      <input type="checkbox" id="gravid">
+      Gravid
+    </label>
+  </div>
+</div>
+<div class="field">
+  <label class="label">Breeding History</label>
+  <div class="control">
+     <textarea id="breeding" class="textarea" placeholder="Enter updated breeding history"></textarea>
+  </div>
+</div>
+
+
+<div class="field is-grouped">
+  <div class="control">
+    <button class="button is-link">Submit</button>
+  </div>
+  <div class="control">
+    <button href="/profile" class="button is-link is-light">Cancel</button>
+  </div>
+</div>
+</div>
+</form>
+</section>
+<script src="/js/edit.js"></script>
+
+ <!-- <form>
+
+    <div class="field">
+  <label class="label">Select attribute you would like to edit</label>
+  <div class="control">
+    <div class="select">
+      <select>
+        <option value="Name">Name</option>
+        <option value="Age">Age</option>
+        <option value="Description">Description</option>
+        <option value="Deceased">Deceased</option>
+        <option value="Gravid">Gravid</option>
+      </select>
+    </div>
+  </div>
+</div>
+</form> -->
+   
