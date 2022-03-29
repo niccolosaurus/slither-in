@@ -2,7 +2,7 @@
     {
         "name": "Sally",
         "age": "1 year",
-        "image": "/pics/SlitherIn.png",
+        "image": "/pics/hognose-snake.jpg",
         "type":"Snake",
         "species": "Hognose Snake",
         "sex": "Male",
@@ -30,5 +30,37 @@
         "date_created": "01/15/2022",
         "user_id": 2,
         "breeding": "Not yet successful"
+    },
+    {
+        "name": "Teddy",
+        "type": "Turtle",
+        "age": "10+ Years",
+        "sex": "Female",
+        "image": "/pics/spurred-tortoise.jpg",
+        "species": "Spurred Tortoise",
+        "pattern": "Normal",
+        "description": "Very old tortoise. Nice outdoor habitat, able to hibernate during the winter.",
+        "gravid": true,
+        "forSale": false,
+        "deceased": false,
+        "date_created": "03/28/2022",
+        "user_id": 2,
+        "breeding": "Succeeded in breeding once before"
+    },
+    {
+        "name": "Drogon",
+        "type": "Lizard",
+        "age": "6 Years",
+        "sex": "Male",
+        "image": "/pics/dragon.jpg",
+        "species": "Bearded Dragon",
+        "pattern": "Black with flakes of red",
+        "description": "This bearded dragon can fly, and breath fire!",
+        "gravid": false,
+        "forSale": false,
+        "deceased": false,
+        "date_created": "03/28/2022",
+        "user_id": 2,
+        "breeding": "none"
     }
 ]
