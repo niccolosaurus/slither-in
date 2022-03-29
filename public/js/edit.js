@@ -1,20 +1,27 @@
-let currentImage
-
 const editAnimalHandler = async (event) => {
     event.preventDefault();
-    const id = document.getElementById('animal-id')
-    const form = document.getElementById('editForm');
-    const name = document.getElementById('name')
-    const description = document.getElementById('description')
-    const deceased = document.getElementById('deceased')
-    const forSale = document.getElementById('sale')
-    const gravid = document.getElementById('gravid')
-    const breeding =document.getElementById('breeding')
+    
+    const name = document.getElementById('name').value;
+    const description = document.getElementById('description').value.trim()
+    const breeding =document.getElementById('breeding').value.trim()
     //still needds logic here
-    const response = await fetch(`/api/edit/${id}`, {
+    const gravidCheckbox = document.getElementById("gravid").checked;
+    const deceasedCheckbox = document.getElementById("deceased").checked;
+    const forSaleCheckbox = document.getElementById("sale").checked;
+    const id = window.location.toString().split('/')[
+        window.location.toString().split('/').length - 1
+      ];
+
+
+    const response = await fetch(`/api/animals/${id}`, {
         method: 'PUT',
         body: JSON.stringify({ 
-            ...formValue,
+            name,
+            description,
+            breeding,
+            gravidCheckbox,
+            deceasedCheckbox,
+            forSaleCheckbox,
         
         }),
         headers: {
@@ -25,8 +32,7 @@ const editAnimalHandler = async (event) => {
     if (response.ok) {
         document.location.replace('/profile');
     } else {
-        const errors = await response.json();
-        alert('Failed to create a new animal due to backend error: ' + JSON.stringify(errors, undefined, 4));
+        alert(response.statusText)
     }
 }
 
