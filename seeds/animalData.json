@@ -12,7 +12,8 @@
         "forSale": true,
         "deceased": false,
         "date_created": "01/01/2022",
-        "user_id": 1
+        "user_id": 1,
+        "breeding": "Successful breeding"
     },
     {
         "name": "Lizzy",
@@ -27,6 +28,7 @@
         "forSale": true,
         "deceased": false,
         "date_created": "01/15/2022",
-        "user_id": 2
+        "user_id": 2,
+        "breeding": "Not yet successful"
     }
 ]
