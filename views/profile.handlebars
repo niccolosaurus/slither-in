@@ -13,8 +13,8 @@
         <div class="columns mt-5 is-full is-variable is-centered is-flex flex-wrap is-flex-wrap-wrap px-0">
             {{#each animals as |animal|}}
             <div class="column is-centered is-flex frex-wrap is-flex-wrap-wrap">
-                <div class="card card-media-margin is-centered" style="width: 400px">
-                    <div class="card-image has-text-centerd is-square">
+                <div class="card card-media-margin is-centered">
+                    <div class="card-image has-text-centerd is-square" style="width: 400px; height: 300px;">
                         <img src="{{animal.image}}" alt="{{animal.description}}">
                         <p class="is-right float-right is-underlinded">Date Added: {{format_date animal.date_created}}
                         </p>
