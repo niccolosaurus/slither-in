@@ -21,54 +21,82 @@
 <div class="field">
   <label class="label">Update Name</label>
   <div class="control">
-    <input id="name" class="input" type="text" placeholder=" Enter new name {{animal.name}}">
+    <input id="name" value="{{animal.name}}" class="input" type="text" placeholder=" Enter new name {{animal.name}}">
   </div>
 </div>
 
 <div class="field">
   <label class="label">Update Description</label>
   <div class="control">
-     <textarea id="description" class="textarea" value="{{animal.description}}"  placeholder="Enter updated description"></textarea>
+     <textarea id="description" class="textarea">{{animal.description}}</textarea>
   </div>
 </div>
-
+{{#if animal.deceased}}
 <div class="field">
   <div class="control">
     <label class="checkbox">
-      <input type="checkbox" id="deceased">
+      <input value="{{animal.deceased}}" type="checkbox"  id="deceased" checked>
       Deceased
   </div>
 </div>
-
-
+{{else}}
 <div class="field">
   <div class="control">
     <label class="checkbox">
-      <input type="checkbox" id="sale">
+      <input value="{{animal.deceased}}" type="checkbox" id="deceased">
+      Deceased
+  </div>
+</div>
+{{/if}}
+{{#if animal.forSale}}
+<div class="field">
+  <div class="control">
+    <label class="checkbox">
+      <input value="{{animal.forSale}}" type="checkbox" id="sale" checked>
       For Sale
     </label>
   </div>
 </div>
-
+{{else}}
 <div class="field">
   <div class="control">
     <label class="checkbox">
-      <input type="checkbox" id="gravid">
+      <input value="{{animal.forSale}}" type="checkbox"id="sale">
+      For Sale
+    </label>
+  </div>
+</div>
+{{/if}}
+{{#if animal.gravid}}
+<div class="field">
+  <div class="control">
+    <label class="checkbox">
+      <input value="{{animal.gravid}}" type="checkbox" id="gravid" checked>
       Gravid
     </label>
   </div>
 </div>
+{{else}}
+<div class="field">
+  <div class="control">
+    <label class="checkbox">
+      <input value="{{animal.gravid}}" type="checkbox" id="gravid">
+      Gravid
+    </label>
+  </div>
+</div>
+{{/if}}
 <div class="field">
   <label class="label">Breeding History</label>
   <div class="control">
-     <textarea id="breeding" class="textarea" placeholder="Enter updated breeding history"></textarea>
+     <textarea id="breeding" class="textarea" placeholder="Enter updated breeding history">{{animal.breeding}}</textarea>
   </div>
 </div>
 
 
 <div class="field is-grouped">
   <div class="control">
-    <button class="button is-link">Submit</button>
+    <button type="submit" id="submit-button" class="button is-link">Submit</button>
   </div>
   <div class="control">
     <button href="/profile" class="button is-link is-light">Cancel</button>
@@ -78,6 +106,7 @@
 </form>
 </section>
 <script src="/js/edit.js"></script>
+</section>
 
  <!-- <form>
 
