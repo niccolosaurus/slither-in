@@ -39,7 +39,7 @@ router.delete('/:id', async (req, res) => {
 
 router.put('/:id', async(req, res) => {
 
-  // update product data
+
   try { const updatedAnimal = await Animal.update(req.body,
     {
       where: {
@@ -47,7 +47,7 @@ router.put('/:id', async(req, res) => {
       }
     }
   )
-  if (!updatedPost) {
+  if (!updatedAnimal) {
     res.status(404).json({ message: 'No reptile found with this id' });
     return;
   }
