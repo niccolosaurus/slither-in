@@ -6,48 +6,54 @@
     </div>
 </section>
 <section class="section is-centered px-0">
-  <div class="container is-centered px-0">
-    <h3 class="title has-text-centered is-size-3">
-      Reptiles
-    </h3>
-    <div class="columns mt-5 is-full is-variable is-centered is-flex flex-wrap is-flex-wrap-wrap px-0">
-      {{#each animals as |animal|}}
-      <div class="column is-centered is-flex frex-wrap is-flex-wrap-wrap">
-        <div class="card card-media-margin is-centered" style="width: 400px">
-          <div class="card-image has-text-centerd is-square">
-            <img src="{{animal.image}}" alt="{{animal.description}}">
-             <p class="is-right float-right is-underlinded">Date Added: {{format_date animal.date_created}}</p>
-          </div>
-          <div class="card-content">
-            <p class="title is-size-3">{{animal.name}}
-            </p>
-            <p class="">{{animal.type}}
-            </p>
-            <p>{{animal.pattern}}</p>
-            <p>{{animal.species}}</p>
-            
-          </div>
-          <footer class="card-footer">
-            <p class="card-footer-item">
-              <a id="view" href="/animal/{{animal.id}}" class="has-text-grey">
-                View
-              </a>
-            </p>
-            <p class="card-footer-item">
-              <a id="edit" href="/" class="has-text-grey">
-                Home
-              </a>
-            </p>
-            <p class="card-footer-item">
-              <a data-id="{{animal.id}}" class="deletion delete-button has-text-grey">
-                Delete
-              </a>
-            </p>
-          </footer>
+    <div class="container is-centered px-0">
+        <h3 class="title has-text-centered is-size-3">
+            Reptiles
+        </h3>
+        <div class="columns mt-5 is-full is-variable is-centered is-flex flex-wrap is-flex-wrap-wrap px-0">
+            {{#each animals as |animal|}}
+            <div class="column is-centered is-flex frex-wrap is-flex-wrap-wrap">
+                <div class="card card-media-margin is-centered" style="width: 400px">
+                    <div class="card-image has-text-centerd is-square">
+                        <img src="{{animal.image}}" alt="{{animal.description}}">
+                        <p class="is-right float-right is-underlinded">Date Added: {{format_date animal.date_created}}
+                        </p>
+                    </div>
+                    <div class="card-content">
+                        <p class="title is-size-3">{{animal.name}}
+                        </p>
+                        <p class="">{{animal.type}}
+                        </p>
+                        <p>{{animal.pattern}}</p>
+                        <p>{{animal.species}}</p>
+
+                    </div>
+                    <footer class="card-footer">
+                        <p class="card-footer-item">
+                            <a id="view" href="/animal/{{animal.id}}" class="has-text-grey">
+                                View
+                            </a>
+                        </p>
+                        <p class="card-footer-item">
+                            <a id="home" href="/" class="has-text-grey">
+                                Home
+                            </a>
+                        </p>
+                        <p class="card-footer-item">
+                            <a id="edit" href="/edit/{{animal.id}}" class="has-text-grey">
+                                Edit
+                            </a>
+                        </p>
+                        <p class="card-footer-item">
+                            <a data-id="{{animal.id}}" class="deletion delete-button has-text-grey">
+                                Delete
+                            </a>
+                        </p>
+                    </footer>
+                </div>
+            </div>
+            {{/each}}
         </div>
-      </div>
-      {{/each}}
     </div>
-  </div>
 </section>
 <script src="/js/profile.js"></script>
