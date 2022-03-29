@@ -3,11 +3,11 @@ const editAnimalHandler = async (event) => {
     
     const name = document.getElementById('name').value;
     const description = document.getElementById('description').value.trim()
-    const breeding =document.getElementById('breeding').value.trim()
+    const breeding = document.getElementById('breeding').value.trim()
     //still needds logic here
-    const gravidCheckbox = document.getElementById("gravid").checked;
-    const deceasedCheckbox = document.getElementById("deceased").checked;
-    const forSaleCheckbox = document.getElementById("sale").checked;
+    const gravid = document.getElementById("gravid").checked;
+    const deceased = document.getElementById("deceased").checked;
+    const forSale = document.getElementById("sale").checked;
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
       ];
@@ -19,9 +19,9 @@ const editAnimalHandler = async (event) => {
             name,
             description,
             breeding,
-            gravidCheckbox,
-            deceasedCheckbox,
-            forSaleCheckbox,
+            gravid,
+            deceased,
+            forSale,
         
         }),
         headers: {

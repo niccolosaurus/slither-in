@@ -27,6 +27,7 @@
             <p>Deceased</p>
               {{/if}}
             <p>{{animal.breeding}}</p>
+           
           </div>
           <footer class="card-footer">
             <p class="card-footer-item">
@@ -34,6 +35,13 @@
                 Home
               </a>
             </p>
+            {{#if logged_in}}
+             <p class="card-footer-item">
+              <a id="home" href="/profile" class="has-text-grey">
+                Profile
+              </a>
+            </p>
+            {{/if}}
           </footer>
           
         </div>
