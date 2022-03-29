@@ -68,6 +68,10 @@ Animal.init(
         key: 'id',
       },
     },
+    breeding: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
   },
   {
     sequelize,
