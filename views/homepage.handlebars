@@ -1,12 +1,12 @@
-<section class="section is-centered">
-  <div class="container is-centered">
+<section class="section is-centered px-0">
+  <div class="container is-centered px-0">
     <h3 class="title has-text-centered is-size-3">
       Reptiles
     </h3>
-    <div class="columns mt-5 is-full is-variable is-centered">
+    <div class="columns mt-5 is-full is-variable is-centered is-flex flex-wrap is-flex-wrap-wrap px-0">
       {{#each animals as |animal|}}
-      <div class="column is-4-tablet is-4-desktop is-centered">
-        <div class="card card-media-margin 1.5rem is-centered">
+      <div class="column is-centered is-flex frex-wrap is-flex-wrap-wrap">
+        <div class="card card-media-margin is-centered" style="width: 400px">
           <div class="card-image has-text-centerd is-square">
             <img src="{{animal.image}}" alt="{{animal.description}}">
              <p class="is-right float-right is-underlinded">Date Added: {{format_date animal.date_created}}</p>
