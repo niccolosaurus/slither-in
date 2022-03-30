@@ -26,8 +26,9 @@
               {{#if animal.deceased}}
             <p>Deceased</p>
               {{/if}}
-            <p>{{animal.breeding}}</p>
-           
+              {{#if animal.breeding}}
+            <p>Breeding History: {{animal.breeding}}</p>
+            {{/if}}
           </div>
           <footer class="card-footer">
             <p class="card-footer-item">
