@@ -108,7 +108,7 @@ const maleBtn = document.getElementById("maleHidden");
 const dropdown = document.getElementById('sex');
 dropdown.onchange = function () {
     let targetValue = document.getElementById('sex').value;
-    if (targetValue === "male") {
+    if (targetValue === "Male") {
         maleBtn.style.display = "none";
     } else {
         maleBtn.style.display = "block";
