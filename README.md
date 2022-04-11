@@ -11,6 +11,7 @@ This is a reptile database where you can keep track of multiple species of repti
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
+- [Pictures](#pictures)
 - [License](#license)
 - [Contribution](#contribution)
 - [Test Instructions](#test-instructions)
@@ -23,6 +24,10 @@ Clone or download the repo.</br> You will also need to install and download node
 
 ### Usage
 Run npm install in node.</br>  Log into mysql and source db/schema.sql.</br>  Run npm seed in node.</br> Run npm start or node server.js in your node terminal.</br> Then check your routes via your favorite browser or Insomnia. 
+
+### Pictures
+![Homepage-Desktop](./public/pics/homepage-desktop.PNG)</br>
+![Homepage-Mobile](./public/pics/homepage-mobile.PNG)</br>
 
 ### License
 MIT
