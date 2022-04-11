@@ -37,8 +37,6 @@ https://choosealicense.com/licenses/mit/
 
 MIT License
 
-Copyright (c) [2022] [NiccoloEck]
-
 ### Contribution
 niccolosaurus (Niccolo Eck) </br> CarlosCastillo123 (Carlos Castillos) </br> Seyaryu (Daniel Holland) </br> JayMoses01 (Jay Moses) </br>
 
