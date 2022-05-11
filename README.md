@@ -38,7 +38,7 @@ https://choosealicense.com/licenses/mit/
 MIT License
 
 ### Contribution
-niccolosaurus (Niccolo Eck) </br> CarlosCastillo123 (Carlos Castillos) </br> Seyaryu (Daniel Holland) </br> JayMoses01 (Jay Moses) </br>
+niccolosaurus (Niccolo Eck) </br> CarlosCastillo123 (Carlos Castillo) </br> Seyaryu (Daniel Holland) </br> JayMoses01 (Jay Moses) </br>
 
 ### Questions
 [Github Profie](https://github.com/niccolosaurus) </br>
